@@ -1,0 +1,54 @@
+<div class="banner-car">
+  <div class="container-banner-car">
+    <%= form_tag cars_path, method: :get, class:"search" do %>
+      <div class="search-address">
+        <label for="address" class="search-label">Retrait et retour</label>
+        <div class="search-inline">
+          <i class="fas fa-search white-color"></i>
+          <%= text_field_tag :address, params[:address], class: "form-control", placeholder: "Mérignac" %>
+        </div>
+      </div>
+      <div class="search-depart">
+        <label for="depart" class="search-label">Date de départ</label>
+        <div class="search-inline">
+          <%= text_field_tag :depart, params[:depart], class: "form-control", placeholder: "17 déc" %>
+          <%= text_field_tag :dep_hour, params[:dep_hour], class: "form-control", placeholder: "10:30" %>
+        </div>
+      </div>
+      <div class="search-arrivee">
+        <label for="arrivee" class="search-label">Date de retour</label>
+        <div class="search-inline">
+          <%= text_field_tag :arrivee, params[:arrivee], class: "form-control", placeholder: "19 déc" %>
+          <%= text_field_tag :arr_hour, params[:arr_hour], class: "form-control", placeholder: "08:00" %>
+        </div>
+      </div>
+      <%= submit_tag "Rechercher", class: "btn btn-primary rechercher" %>
+    <% end %>
+  </div>
+</div>
+
+<div class="container-agence">
+  <div id="map"
+     style="width: 100%; height: 600px;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+  <div class="list-agences">
+    <% @cars.each do |car| %>
+      <div class="agence">
+        <div class="card-toggle" id="card-target-<%=car.id%>"><i class="fas fa-chevron-down"></i></div>
+        <h4><%= car.address.split(',')[1] %></h4>
+        <p><%= car.address.split(',')[0] %></p>
+        <p class='mb-4' id="min-price-agence">Agences au départ de € <%= car.price_per_day %> | jour</p>
+
+        <div class="card-interaction-infos hidden border-left-accordeon card-target-<%=car.id%>">
+          <h3>Heures d'ouverture</h3>
+          <p class='mt-2'><%#= car.starts_at %></p>
+          <p class='mb-4'><%#= car.ends_at %></p>
+          <h2>Plus d'information</h2>
+          <%= link_to 'Voir les offres', car_path(car), class:"btn btn-primary btn-agence" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,105 @@
+$color-default: #ff5f00;
+
+.container-banner-car {
+  width: 80%;
+}
+
+.search {
+  display: flex;
+  width: 100%;
+  margin-top: 20px;
+  align-items: center;
+
+  .search-inline {
+    display: flex;
+    align-items: center;
+  }
+
+  .btn-primary {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 2%;
+    padding-right: 2%;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  .search-label {
+    color: $color-default;
+    font-weight: 300;
+    font-size: 16px;
+    margin-bottom: 0;
+  }
+
+  #address {
+    padding-left: 33px;
+    margin-left: -20px;
+    margin-right: 20px;
+  }
+
+  #depart, #dep_hour, #arrivee, #arr_hour {
+    width: 100%;
+    padding-left: 0px;
+    margin-left: 0px;
+    margin-right: 20px;
+  }
+
+  .search-address {
+    width: 44%;
+  }
+
+  .search-depart, .search-arrivee {
+    width: 25%;
+  }
+
+
+}
+
+.fa-search {
+  font-size: 20px;
+  -moz-transform: scale(-1, 1);
+  -webkit-transform: scale(-1, 1);
+  -o-transform: scale(-1, 1);
+  -ms-transform: scale(-1, 1);
+  transform: scale(-1, 1);
+}
+
+.white-color {
+  color: rgb(240, 240, 240);
+  transition: .75s ease;
+}
+
+.dark-grey-color {
+  color: $color-default;
+  transition: .75s ease;
+}
+
+// .form-control {
+//   background-color: transparent !important;
+//   border: none;
+//   border-bottom: 2px solid white;
+//   font-family: 'Lato', sans-serif;
+//   font-size: 22px;
+//   font-weight: 400;
+
+//   &::placeholder {
+//   color: rgb(240, 240, 240);
+//   }
+
+//   &:focus {
+//     border-bottom: 2px solid $color-default;
+//     outline: none !important;
+//     -webkit-box-shadow: none;
+//     box-shadow: none;
+
+//     &::placeholder {
+//       color: $color-default;
+//     }
+//   }
+
+// }
+// input:-webkit-autofill,
+//   input:-webkit-autofill:focus {
+//     transition: background-color 600000s 0s, color 600000s 0s;
+//   }

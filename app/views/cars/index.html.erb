@@ -1,0 +1,47 @@
+<div class="banner-car">
+  <div class="container-banner-car">
+    <%= form_tag cars_path, method: :get, class:"search" do %>
+      <div class="search-address">
+        <label for="address" class="search-label">Lieu de départ</label>
+        <div class="search-inline">
+          <i class="fas fa-search white-color"></i>
+          <%= text_field_tag :address, params[:address], class: "form-control", placeholder: "Entrez une ville..." %>
+        </div>
+      </div>
+      <%= submit_tag "Rechercher", class: "btn btn-primary rechercher" %>
+    <% end %>
+  </div>
+</div>
+
+<div class="container-cars-index">
+  <div class="cards">
+        <% @cars.each do |car| %>
+          <%= button_to(car_path(car), method: :get, class: "btn-stripped" ) do %>
+            <div class="card">
+              <div class="card-photo">
+                  <%= image_tag 'card-en-construction-01.png', crop: :fill, class: "card-photo" %>
+              </div>
+              <div class="card-body">
+                <div class="text">
+                  <div class="card-body-title">
+                    <h3 class="card-title m-0"><%= car.brand %></h3>
+                    <h3 class="car-model ml-2 mb-0"><%= car.model%></h3>
+                  </div>
+                  <div class="card-body-description">
+                    <p></p>
+                  </div>
+                </div>
+                <div class="price">
+                  <p class="value-price"><%= car.price_per_day.to_i %> €</p>
+                  <p>Par jour</p>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+      <% if @cars.empty? %>
+        <p class="text-left message-no-card">Vous n'avez pas de véhicules qui correspondent à votre recherche...</p>
+      <% end %>
+    </div>
+</div>

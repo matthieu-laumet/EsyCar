@@ -1,2 +1,67 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner-home">
+  <div class="container-banner-home text-left">
+    <h1 class='title'>Louez votre voiture</h1>
+    <h2>En quelques clics</h2>
+      <div class="paragraphe">
+        <p>Remplissez les champs, réservez, partez !</p>
+      </div>
+        <%= form_tag cars_path, method: :get, class:"search" do %>
+      <div class="search-address">
+        <label for="address" class="search-label">Lieu de départ</label>
+        <div class="search-inline">
+          <i class="fas fa-search white-color"></i>
+          <%= text_field_tag :address, params[:address], class: "form-control", placeholder: "Entrez une ville..." %>
+        </div>
+      </div>
+      <%= submit_tag "Rechercher", class: "btn btn-primary rechercher" %>
+    <% end %>
+  </div>
+</div>
+
+<div class="container-home">
+  <h3>Les offres du moment sur les locations de voitures et d'utilitaires</h3>
+  <div class="cards-home">
+    <div class="card-home">
+      <h4 class="px-4 text-center">Titre de la card 1</h4>
+      <div class="card-home-pop">
+        <p>Jusqu'à</p>
+        <h6>10%</h6>
+        <p>de remise</p>
+      </div>
+    </div>
+    <div class="card-home">
+      <h4 class="px-4 text-center">Titre de la card 1</h4>
+      <div class="card-home-pop">
+        <p>Jusqu'à</p>
+        <h6>10%</h6>
+        <p>de remise</p>
+      </div>
+    </div>
+    <div class="card-home">
+      <h4 class="px-4 text-center">Titre de la card 1</h4>
+      <div class="card-home-pop">
+        <p>Jusqu'à</p>
+        <h6>10%</h6>
+        <p>de remise</p>
+      </div>
+    </div>
+    <div class="card-home">
+      <h4 class="px-4 text-center">Titre de la card 1</h4>
+      <div class="card-home-pop">
+        <p>Jusqu'à</p>
+        <h6>10%</h6>
+        <p>de remise</p>
+      </div>
+    </div>
+  </div>
+  <div class="content-home">
+    <div class="content-text">
+      <h4>Moyenne durée</h4>
+      <h3>Location au mois pour les particuliers</h3>
+      <p>La location moyenne durée vous offre tous les avantages du leasing. C'est l'alternative à l'achat de voiture destinée aux particuliers.</p>
+      <a href="#" class="btn btn-primary">En savoir plus</a>
+    </div>
+    <div class="content-img">
+    </div>
+  </div>
+</div>

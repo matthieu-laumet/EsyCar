@@ -1,0 +1,28 @@
+.container-cars {
+  margin-right: 5%;
+  margin-left: 5%;
+  min-height: 18vh;
+  margin-bottom: 20px;
+
+}
+
+.car-title {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 20px;
+
+  h1 {
+    font-size: 32px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+  }
+}
+
+.message-no-card {
+  font-size: 20px;
+  padding-top: 20px;
+  border-top: 1px solid gray;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+}

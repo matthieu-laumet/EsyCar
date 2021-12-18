@@ -1,0 +1,82 @@
+.banner-home {
+  height: 500px;
+  background-image: asset-url("Banner-01.svg");
+  background-size: cover;
+  background-position: right;
+  color: rgb(40, 40, 40);
+  margin-bottom: 30px;
+
+  .container-banner-home {
+    padding-left: 110px;
+    padding-top: 115px;
+    width: 70%;
+  }
+
+  .title {
+    color: white;
+    margin-bottom: 5px;
+    font-size: 80px;
+    font-family: 'Permanent Marker', cursive;
+  }
+
+  h2 {
+    font-family: 'Rubik', sans-serif;
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: white;
+  }
+
+  p {
+    font-family: 'Rubik', sans-serif;
+    font-size: 20px;
+    margin: 0;
+    margin-top: 5px;
+    color: white;
+  }
+
+  .focus {
+    color: rgb(240, 240, 240);
+    font-weight: bold;
+    font-size: 22px;
+    font-family: 'Rubik', sans-serif;
+    margin-top: 5px;
+    text-shadow: 1px 1px 3px rgba($color: #585858, $alpha: 1);;
+  }
+}
+
+// #mot-1 {
+//   margin: 0;
+//   font-size: 90px;
+//   font-family: 'Permanent Marker', cursive;
+// }
+
+// #mot-2 {
+//   margin: 0;
+//   margin-left: 16px;
+//   font-size: 90px;
+//   font-family: 'Gloria Hallelujah', cursive;
+// }
+
+.inline {
+  display: flex;
+  align-items: flex-end;
+}
+
+
+.banner-car {
+  position: relative;
+  margin-bottom: -22px;
+  top: -22px;
+  height: 140px;
+  // height: 1400px;
+  background-color: rgb(40, 40, 40);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 15%;
+  padding-right: 15%;
+
+  .container-banner-home {
+    width: 70%;
+  }
+}
