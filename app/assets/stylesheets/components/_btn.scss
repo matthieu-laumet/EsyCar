@@ -1,6 +1,7 @@
 $color-default: #868686;
 $color-dark-default: #505050;
 $color-orange: #f79e1e;
+$color-darkgray: rgba(30, 30, 30, .4);
 
 .btn-primary {
   background-color: $color-default;
@@ -23,4 +24,25 @@ $color-orange: #f79e1e;
     color: $color-orange;
     background-color: rgba($color: white, $alpha: .1);
   }
+}
+
+.voir-carte {
+  width: 130px;
+  font-size: 18px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+}
+
+.voirlacarte-inline {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.voir-carte {
+  margin-right: 10px;
+}
+
+.trait {
+  border-bottom: 1.5px solid $color-darkgray;
+  width: 100%;
 }

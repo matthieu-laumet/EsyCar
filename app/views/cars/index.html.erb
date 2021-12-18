@@ -5,7 +5,7 @@
         <label for="address" class="search-label">Lieu de départ</label>
         <div class="search-inline">
           <i class="fas fa-search white-color"></i>
-          <%= text_field_tag :address, params[:address], class: "form-control", placeholder: "Entrez une ville..." %>
+          <%= text_field_tag :address, params[:address], class: "form-control-home", placeholder: "Entrez une ville..." %>
         </div>
       </div>
       <%= submit_tag "Rechercher", class: "btn btn-primary rechercher" %>
@@ -14,6 +14,14 @@
 </div>
 
 <div class="container-cars-index">
+  <div class="voirlacarte-inline">
+    <div class="btn btn-primary voir-carte">Voir la carte</div>
+    <div class="trait"></div>
+  </div>
+  <div id="map"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
   <div class="cards">
         <% @cars.each do |car| %>
           <%= button_to(car_path(car), method: :get, class: "btn-stripped" ) do %>
