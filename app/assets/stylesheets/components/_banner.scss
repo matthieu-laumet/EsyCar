@@ -1,35 +1,39 @@
+$color-orange: #f79e1e;
+
 .banner-home {
   height: 500px;
   background-image: asset-url("Banner-01.svg");
   background-size: cover;
   background-position: right;
   color: rgb(40, 40, 40);
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 
   .container-banner-home {
-    padding-left: 110px;
-    padding-top: 115px;
-    width: 70%;
+    padding-left: 90px;
+    padding-top: 50px;
+    width: 41%;
   }
 
   .title {
     color: white;
     margin-bottom: 5px;
-    font-size: 80px;
-    font-family: 'Permanent Marker', cursive;
+    font-size: 55px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
   }
 
   h2 {
     font-family: 'Rubik', sans-serif;
     font-size: 40px;
-    margin-bottom: 20px;
-    color: white;
+    margin-bottom: 5px;
+    color: $color-orange;
   }
 
   p {
     font-family: 'Rubik', sans-serif;
     font-size: 20px;
     margin: 0;
+    margin-bottom: 60px;
     margin-top: 5px;
     color: white;
   }

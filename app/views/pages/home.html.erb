@@ -1,6 +1,6 @@
 <div class="banner-home">
   <div class="container-banner-home text-left">
-    <h1 class='title'>Louez votre voiture</h1>
+    <h1 class='title'>LOUEZ VOTRE VOITURE</h1>
     <h2>En quelques clics</h2>
       <div class="paragraphe">
         <p>Remplissez les champs, réservez, partez !</p>
@@ -10,10 +10,10 @@
         <label for="address" class="search-label">Lieu de départ</label>
         <div class="search-inline">
           <i class="fas fa-search white-color"></i>
-          <%= text_field_tag :address, params[:address], class: "form-control", placeholder: "Entrez une ville..." %>
+          <%= text_field_tag :address, params[:address], class: "form-control-home", placeholder: "Entrez une ville..." %>
         </div>
       </div>
-      <%= submit_tag "Rechercher", class: "btn btn-primary rechercher" %>
+      <%= submit_tag "Rechercher", class: "btn rechercher" %>
     <% end %>
   </div>
 </div>
