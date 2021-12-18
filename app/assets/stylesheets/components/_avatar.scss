@@ -1,11 +1,17 @@
+$color-gray: #6e6e6e;
+$color-darkgray: rgb(30, 30, 30);
+
 .avatar {
   width: 40px;
   border-radius: 50%;
+  border: $color-gray solid 1px;
+  // margin-right: 20px;
 }
 .avatar-large {
   width: 56px;
   border-radius: 50%;
 }
+
 .avatar-bordered {
   width: 40px;
   border-radius: 50%;

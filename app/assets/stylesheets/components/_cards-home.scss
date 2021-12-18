@@ -1,0 +1,59 @@
+.cards-home {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 40px;
+  margin-bottom: 60px;
+  height: 250px;
+
+  .card-home {
+    background-image: linear-gradient(90deg,rgba(160, 160, 160,.9),transparent 90%), asset-url("card-en-construction-01.png");
+    background-size: cover;
+    display: flex;
+    align-items: flex-end;
+    border-radius: 6px;
+    border: #dddddd solid 1px;
+    box-shadow: 0px 0px 4px rgba(200, 200, 200,.7);
+    position: relative;
+
+    &:hover {
+      opacity: .5;
+    }
+
+    h4 {
+      width: 100%;
+      margin-bottom: 10px;
+      color: white;
+      font-weight: 900;
+      text-shadow: 1px 1px 2px rgba(50, 50, 50,.57);
+    }
+
+    .card-home-pop {
+      height: 95px;
+      width: 105;
+      color: white;
+      background-color: rgb(110, 110, 110);
+      border-radius: 4px;
+      position: absolute;
+      top: -9px;
+      left: 9px;
+      display: flex;
+      flex-direction: column;
+      padding-left: 12px;
+      padding-right: 12px;
+      box-shadow: 2px 2px 6px rgba(100, 100, 100,.3);
+
+
+      p {
+        margin-bottom: 0;
+        line-height: 38px;
+      }
+
+      h6 {
+        margin-bottom: 0;
+        font-size: 36px;
+        font-weight: 900;
+        line-height: 22px;
+      }
+    }
+  }
+}

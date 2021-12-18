@@ -1,0 +1,55 @@
+<div class="banner-car">
+  <div class="container-banner-car">
+    <%= form_tag cars_path, method: :get, class:"search" do %>
+      <div class="search-address">
+        <label for="address" class="search-label">Lieu de départ</label>
+        <div class="search-inline">
+          <i class="fas fa-search white-color"></i>
+          <%= text_field_tag :address, params[:address], class: "form-control", placeholder: "Entrez une ville..." %>
+        </div>
+      </div>
+      <%= submit_tag "Rechercher", class: "btn btn-primary rechercher" %>
+    <% end %>
+  </div>
+</div>
+
+<div class="container-cars-show">
+  <div class="left-show">
+    <div class="main-card-show">
+      <%= image_tag 'card-en-construction-01.png', crop: :fill, class: "card-photo-show" %>
+      <div class="card-show-text">
+        <div class="text-car-in-line">
+          <h3 class="card-title-show m-0"><%= @car.brand %></h3>
+          <h3 class="car-model-show ml-2 mb-0"><%= @car.model%></h3>
+        </div>
+        <h4 class="year"><%= @car.year_of_production %></h4>
+        <div class="price-show">
+          <p class="value-price-show"><%= @car.price_per_day.to_i %>&thinsp;€</p>
+          <p>Par jour</p>
+        </div>
+      </div>
+    </div>
+    <div class="address-show">
+      <div class="address-text">
+        <h5>Adresse de départ et de retour</h5>
+        <div class="address-inline"><i class="fas fa-map-marker-alt mr-2"></i><p><%= @car.address %></p></div>
+        <h5>Contactez le propriétaire du véhicule : </h5>
+        <div class="address-inline"><i class="fas fa-at mr-2"></i><p><%= @car.user.email %></p></div>
+        <div class="place-de-parking">
+          <p>Cette voiture a une place de parking réservée. Pas besoin de chercher une place au retour !</p>
+        </div>
+      </div>
+      <div id="map"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+    </div>
+  </div>
+  <div class="right-show">
+      <h3 id="Nouveau-truc">Quand souhaitez-vous réserver ce véhicule ?</h3>
+      <%= simple_form_for([ @car, @booking] ) do |f| %>
+        <%= f.input :starts_at, as: :string, type: :text, label:'', placeholder:'Choisissez vos dates' %>
+        <%= f.button :submit, class:'btn btn-primary' %>
+      <% end %>
+  </div>
+</div>

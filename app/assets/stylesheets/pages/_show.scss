@@ -1,0 +1,178 @@
+$color-gray: #6e6e6e;
+$color-darkgray: rgb(30, 30, 30);
+
+.container-show {
+  min-height: 82vh;
+}
+
+.container-cars-show {
+  min-height: 82vh;
+  margin-top: 2%;
+  margin-left: 5%;
+  margin-right: 5%;
+  display: flex;
+}
+
+.left-show {
+  width: 60%;
+  margin-bottom: 20px;
+  margin-right: 1.5%;
+
+  .main-card-show {
+    background-color: white;
+    height: 450px;
+    margin-bottom: 20px;
+    border: rgba($color: $color-gray, $alpha: .2) 1px solid;
+    box-shadow: 0px 0px 4px rgba($color: $color-gray, $alpha: .15);
+    border-radius: 6px;
+
+    .card-photo-show {
+      height: 78%;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 6px 6px 0 0;
+      border-bottom: 1px solid $color-darkgray;
+    }
+
+    .card-show-text{
+      padding-left: 30px;
+      padding-right: 30px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+
+      // align-content: flex-end;
+      height: 100px;
+      align-items: center;
+      position: relative;
+
+      .text-car-in-line {
+        display: flex;
+      }
+
+      .year {
+        font-size: 22px;
+        font-weight: 300;
+      }
+
+      .car-model-show {
+        font-family: 'Lato', sans-serif;
+        opacity: .7;
+        font-weight: 700;
+        font-size: 26px;
+      }
+
+      .card-title-show{
+        font-family: 'Lato', sans-serif;
+        font-weight: 900;
+        font-size: 30px;
+      }
+    }
+  }
+
+}
+
+.price-show {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+  background-color: #c6c6c6;
+  border-radius: 4px;
+  position: absolute;
+  bottom: 20px;
+  right: 40px;
+  border: 1px solid $color-darkgray;
+  text-align: center;
+
+  .value-price-show {
+    font-size: 54px;
+    color: black;
+    font-weight: 900;
+    line-height: 50px;
+  }
+
+  p {
+    margin-bottom: 0;
+    font-size: 28px;
+    color: black;
+    font-weight: 400;
+  }
+}
+
+
+.address-show {
+  width: 100%;
+  display: flex;
+  border: rgba($color: $color-gray, $alpha: .2) 1px solid;
+  box-shadow: 0px 0px 4px rgba($color: $color-gray, $alpha: .15);
+  border-radius: 6px;
+
+  #map {
+    width: 100%;
+    height: 300px;
+    border-left: 1px solid $color-darkgray;
+  }
+
+  .address-text {
+    flex-grow: 1;
+    padding: 40px;
+
+    h5 {
+      font-family: 'Lato', sans-serif;
+      font-weight: 900;
+      font-size: 16px;
+      margin-bottom: 0;
+    }
+
+    .place-de-parking {
+      margin-top: 10px;
+      text-align: center;
+      padding: 10px;
+      width: 85%;
+      background-color: rgba($color: $color-gray, $alpha: .1);
+      border-radius: 6px;
+
+      p {
+        margin-bottom: 0;
+        color: rgba($color: $color-gray, $alpha: .7);
+      }
+    }
+  }
+
+  .address-inline {
+    display: flex;
+    align-items: baseline;
+    opacity: .7;
+
+    p {
+      font-family: 'Lato', sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      margin-top: 3px;
+    }
+  }
+}
+
+.right-show {
+  height: 770px;
+  width: 38%;
+  background-color: white;
+  border: rgba($color: $color-gray, $alpha: .2) 1px solid;
+  box-shadow: 0px 0px 4px rgba($color: $color-gray, $alpha: .15);
+  border-radius: 6px;
+  padding: 40px;
+}
+
+#date-reservation {
+  background-color: rgb(40, 40, 40);
+  border: none;
+  border-bottom: 2px solid white;
+  // color: rgb(80, 80, 80);
+  font-family: 'Lato', sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+
+  &::placeholder {
+  color: rgb(40, 40, 40);
+  }
+}

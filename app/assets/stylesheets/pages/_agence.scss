@@ -1,0 +1,120 @@
+$color-dark-default: #505050;
+$color-darker-default: #252525;
+
+.container-cars-index {
+  min-height: 73vh;
+  top: -22px;
+  display: grid;
+  margin: 2% 3%;
+}
+
+.list-agences {
+  right: 0;
+  width: 30%;
+  z-index: 10;
+  padding-top: 20px;
+  background-color: white;
+  box-shadow: -4px 0px 5px rgba($color: #2c2c2c, $alpha: .1);
+  border-left: 1px solid rgba($color: #d9d9d9, $alpha: 1.0);
+
+  .agence {
+    border-bottom: 1px solid $color-dark-default;
+    margin-bottom: 20px;
+    padding-left: 70px;
+    padding-right: 50px;
+  }
+
+  h4 {
+    color: black;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 0;
+  }
+
+  p {
+    color: $color-dark-default;
+    font-weight: 300;
+    font-size: 14px;
+    margin-bottom: 0px;
+  }
+
+  #min-price-agence {
+    color: $color-darker-default;
+    font-weight: 400;
+    margin-bottom: 0px;
+    margin-top: 3px;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .rotate {
+    transform: rotate(180deg);
+    position: relative;
+    top: -90px;
+    right: -310px;
+  }
+
+  i {
+    color: #5c5b5b;
+    opacity: 0.7;
+    font-size: 20px;
+    cursor: pointer;
+    // position: absolute;
+    top: 0;
+    right: 0;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .card-toggle {
+    position: relative;
+    top: 30px;
+    right: -310px;
+    width: 20px;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.card-interaction-infos {
+  padding-left: 71px;
+  margin-left: -71px;
+  padding-top: 110px;
+  margin-top: -140px;
+
+  h3 {
+    margin-top: 30px;
+    margin-bottom: 0;
+    font-weight: 700;
+    font-size: 16px;
+  }
+  h2 {
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+  .btn-agence {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+}
+
+.border-left-accordeon {
+  border-left: gray solid 5px;
+}
+
+.mapboxgl-popup {
+  width: 250px;
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+  p {
+    margin-bottom: 0;
+  }
+}

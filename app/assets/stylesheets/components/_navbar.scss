@@ -1,3 +1,6 @@
+$color-gray: #6e6e6e;
+$color-darkgray: rgb(30, 30, 30);
+
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
@@ -7,6 +10,67 @@
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.navbar {
+  padding-top: 0.5rem;
+  padding-right: 1.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 6px 6px rgba($color: #585858, $alpha: .1);
+  border-bottom: 1px solid rgb(225, 225, 225);
+
+  .avatar-display {
+    display: flex;
+    align-items: center;
+
+    p  {
+      margin-right: 10px;
+      margin-bottom: 0;
+    }
+  }
+
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 40px;
+    }
+
+    h1 {
+      font-weight: bold;
+      margin-left: 20px;
+      margin-right: 30px;
+      font-size: 22px;
+      margin-bottom: 0;
+    }
+  }
+
+  .top-menus {
+    display: flex;
+    align-items: center;
+  }
+
+  .inscription {
+    display: flex;
+    align-items: baseline;
+    font-size: 17px;
+
+    p{
+      margin-bottom: 0;
+    }
+  }
+
+  .menu-link {
+    text-decoration: none;
+    color: $color-gray;
+    margin-right: 25px;
+    &:hover {
+      color: $color-darkgray;
+    }
+  }
+
+
 }
