@@ -1,4 +1,5 @@
-$color-default: #ff5f00;
+$color-default: #f79e1e;
+$color-orange: #f79e1e;
 
 .container-banner-car {
   width: 80%;
@@ -8,7 +9,7 @@ $color-default: #ff5f00;
   display: flex;
   width: 100%;
   margin-top: 20px;
-  align-items: center;
+  align-items: flex-end;
 
   .search-inline {
     display: flex;
@@ -38,19 +39,8 @@ $color-default: #ff5f00;
     margin-right: 20px;
   }
 
-  #depart, #dep_hour, #arrivee, #arr_hour {
-    width: 100%;
-    padding-left: 0px;
-    margin-left: 0px;
-    margin-right: 20px;
-  }
-
   .search-address {
-    width: 44%;
-  }
-
-  .search-depart, .search-arrivee {
-    width: 25%;
+    width: 100%;
   }
 
 
@@ -75,31 +65,33 @@ $color-default: #ff5f00;
   transition: .75s ease;
 }
 
-// .form-control {
-//   background-color: transparent !important;
-//   border: none;
-//   border-bottom: 2px solid white;
-//   font-family: 'Lato', sans-serif;
-//   font-size: 22px;
-//   font-weight: 400;
+.form-control-home {
+  background-color: transparent !important;
+  border: none;
+  border-bottom: 2px solid white;
+  font-family: 'Lato', sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  width: 100%;
+  line-height: 50px;
 
-//   &::placeholder {
-//   color: rgb(240, 240, 240);
-//   }
+  &::placeholder {
+  color: rgb(240, 240, 240);
+  }
 
-//   &:focus {
-//     border-bottom: 2px solid $color-default;
-//     outline: none !important;
-//     -webkit-box-shadow: none;
-//     box-shadow: none;
+  &:focus {
+    border-bottom: 2px solid $color-default;
+    outline: none !important;
+    -webkit-box-shadow: none;
+    box-shadow: none;
 
-//     &::placeholder {
-//       color: $color-default;
-//     }
-//   }
+    &::placeholder {
+      color: $color-default;
+    }
+  }
+}
 
-// }
-// input:-webkit-autofill,
-//   input:-webkit-autofill:focus {
-//     transition: background-color 600000s 0s, color 600000s 0s;
-//   }
+input:-webkit-autofill,
+  input:-webkit-autofill:focus {
+    transition: background-color 600000s 0s, color 600000s 0s;
+  }

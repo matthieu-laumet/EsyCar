@@ -1,5 +1,6 @@
 $color-default: #868686;
 $color-dark-default: #505050;
+$color-orange: #f79e1e;
 
 .btn-primary {
   background-color: $color-default;
@@ -8,4 +9,18 @@ $color-dark-default: #505050;
      background-color: $color-dark-default;
      border: $color-dark-default;
    }
+}
+
+.rechercher {
+  background-color: none;
+  border: 3px solid $color-orange;
+  color: white;
+  font-weight: 700;
+  font-size: 20px;
+  padding: 6px 14px;
+
+  &:hover {
+    color: $color-orange;
+    background-color: rgba($color: white, $alpha: .1);
+  }
 }

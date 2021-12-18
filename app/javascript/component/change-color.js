@@ -1,5 +1,5 @@
 const changeColor = () => {
-  const query = document.querySelector('.form-control');
+  const query = document.querySelector('.form-control-home');
   const loupe = document.querySelector('.white-color')
   const rechercher = document.querySelector('.rechercher')
 
