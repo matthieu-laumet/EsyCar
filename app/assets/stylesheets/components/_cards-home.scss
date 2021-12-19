@@ -5,8 +5,20 @@
   margin-bottom: 60px;
   height: 250px;
 
+  #card-home1 {
+    background-image: linear-gradient(90deg,rgba(35, 21, 54, 0.9),transparent 90%), asset-url("card1.jpg");
+  }
+  #card-home2 {
+    background-image: linear-gradient(90deg,rgba(35, 21, 54, 0.9),transparent 90%), asset-url("Card2.jpg");
+  }
+  #card-home3 {
+    background-image: linear-gradient(90deg,rgba(35, 21, 54, 0.9),transparent 90%), asset-url("card3.jpg");
+  }
+  #card-home4 {
+    background-image: linear-gradient(90deg,rgba(35, 21, 54, 0.9),transparent 90%), asset-url("card4.jpg");
+  }
+
   .card-home {
-    background-image: linear-gradient(90deg,rgba(160, 160, 160,.9),transparent 90%), asset-url("card-en-construction-01.png");
     background-size: cover;
     display: flex;
     align-items: flex-end;
@@ -31,7 +43,7 @@
       height: 95px;
       width: 105;
       color: white;
-      background-color: rgb(110, 110, 110);
+      background-color: $color-orange;
       border-radius: 4px;
       position: absolute;
       top: -9px;

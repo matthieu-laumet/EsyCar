@@ -1,16 +1,21 @@
-$color-orange: #f79e1e;
+$color-orange: hsl(35, 93%, 54%);
+$color-orange-dark:#f7981d;
+
+.titre-home {
+  $color-orange: #f79e1e !important;
+}
 
 .container-home {
   min-height: 41vh;
   margin-right: 10%;
   margin-left: 10%;
 
+
   h3 {
     margin-bottom: 30px;
     font-size: 26px;
     font-family: 'Lato', sans-serif;
     font-weight: 700;
-    $color-orange: #f79e1e;
   }
 
   .content-home {
@@ -20,17 +25,39 @@ $color-orange: #f79e1e;
   }
 
   .content-text {
-    width: 27%;
+    width: 45%;
     margin-right: 3%;
+
+    h3 {
+      margin-bottom: 30px;
+      font-size: 26px;
+      font-family: 'Lato', sans-serif;
+      font-weight: 900;
+      color: $color-orange-dark;
+    }
+
+    h4 {
+      margin-bottom: 0;
+      font-size: 20px;
+      font-family: 'Lato', sans-serif;
+      font-weight: 700;
+    }
+
+    p {
+      font-size: 16px;
+      font-family: 'Lato', sans-serif;
+      font-weight: 300;
+      margin-bottom: 25px;
+    }
   }
 
   .content-img {
     width: 70%;
     height: 500px;
-    background-image: linear-gradient(90deg,rgba(160, 160, 160,.9),transparent 90%), asset-url("card-en-construction-01.png");
+    background-image: linear-gradient(90deg,rgba(240, 240, 240,.2),transparent 90%), asset-url("Card5");
     background-size: cover;
     border-radius: 6px;
-    border: #dddddd solid 1px;
-    box-shadow: 0px 0px 4px rgba(200, 200, 200,.7);
+    // border: rgba($color: $color-gray, $alpha: .052) 1px solid;
+    box-shadow: 0px 0px 4px rgba($color: $color-gray, $alpha: .15);
   }
 }
