@@ -1,12 +1,14 @@
 const showMap = (item) => {
   const voirMap = document.querySelector("#btn-carte");
   const map = document.querySelector(".d-none");
-  const text = document.querySelector(".text-change");
+  const voirMapText = document.querySelector(".voir-carte");
+  const voirListText = document.querySelector(".voir-liste");
 
   if (voirMap) {
       voirMap.addEventListener("click", (event) => {
         map.classList.toggle("d-none")
-        text.innerHTML = 'Voir la liste'
+        voirMapText.classList.toggle("hidden")
+        voirListText.classList.toggle("hidden")
       });
     };
 }

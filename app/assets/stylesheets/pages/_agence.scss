@@ -115,7 +115,19 @@ $color-darker-default: #252525;
 .mapboxgl-popup-content {
   text-align: center;
   font-family: 'Lato', sans-serif;
-  p {
+  p, h4, h3 {
     margin-bottom: 0;
   }
+
+  p {
+    font-size: 14px;
+  }
+  h5 {
+    opacity: .5;
+  }
+
+  .fas {
+    font-size: 70%;
+  }
+
 }
