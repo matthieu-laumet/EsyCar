@@ -15,12 +15,16 @@
 
 <div class="container-cars-index">
   <div class="voirlacarte-inline">
-    <div class="btn btn-primary voir-carte">Voir la carte</div>
+    <div class="btn rechercher" id="btn-carte">
+      <p class="text-change"><i class="fas fa-map-marked-alt mr-2"></i>Voir la carte</p>
+    </div>
     <div class="trait"></div>
   </div>
-  <div id="map"
-    data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  <div class="d-none">
+    <div id="map"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
   </div>
   <div class="cards">
         <% @cars.each do |car| %>

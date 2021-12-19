@@ -8,6 +8,10 @@ $color-darker-default: #252525;
   margin: 2% 3%;
 }
 
+.hidden {
+  display: none;
+}
+
 .list-agences {
   right: 0;
   width: 30%;
@@ -45,9 +49,6 @@ $color-darker-default: #252525;
     margin-top: 3px;
   }
 
-  .hidden {
-    display: none;
-  }
 
   .rotate {
     transform: rotate(180deg);

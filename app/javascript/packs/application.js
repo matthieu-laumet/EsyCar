@@ -27,6 +27,7 @@ import { actionModal } from '../plugins/modal';
 import { changeColor } from '../component/change-color';
 import { initMapbox } from '../plugins/init_mapbox';
 import { showCard } from '../plugins/show-card';
+import { showMap } from '../plugins/display_map';
 import { datePicker } from '../plugins/date-picker';
 
 // import { initSelect2 } from '../components/init_select2';
@@ -38,5 +39,6 @@ document.addEventListener('turbolinks:load', () => {
   changeColor();
   initMapbox();
   showCard();
+  showMap();
   datePicker();
 });
