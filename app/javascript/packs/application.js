@@ -27,6 +27,7 @@ import { actionModal } from '../plugins/modal';
 import { changeColor } from '../component/change-color';
 import { initMapbox } from '../plugins/init_mapbox';
 import { showCard } from '../plugins/show-card';
+import { initAutocomplete } from '../plugins/init_autocomplete.js';
 import { showMap } from '../plugins/display_map';
 import { datePicker } from '../plugins/date-picker';
 
@@ -41,4 +42,5 @@ document.addEventListener('turbolinks:load', () => {
   showCard();
   showMap();
   datePicker();
+  initAutocomplete();
 });

@@ -1,8 +1,20 @@
 $color-default: #f79e1e;
 $color-orange: #f79e1e;
+$color-orange-dark:#f7981d;
 
 .container-banner-car {
   width: 80%;
+}
+
+.ap-name {
+  color: $color-orange-dark;
+}
+
+.ap-suggestion-icon svg {
+  fill: $color-orange-dark;
+  &:hover {
+    fill: $color-orange-dark;
+  }
 }
 
 .search {
@@ -38,6 +50,7 @@ $color-orange: #f79e1e;
     padding-left: 33px;
     margin-left: -20px;
     margin-right: 20px;
+    color: $color-orange;
   }
 
   .search-address {
