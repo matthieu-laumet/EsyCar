@@ -2,7 +2,7 @@ class CarsController < ApplicationController
   def index
     # raise
     if params[:address].present?
-      @cars = Car.near(params[:address], 30).where.not(latitude: nil, longitude: nil)
+      @cars = Car.near(params[:address], 15).where.not(latitude: nil, longitude: nil)
 
       @markers = @cars.geocoded.map do |car|
         {
