@@ -8,7 +8,7 @@
           <%= text_field_tag :address, params[:address], class: "form-control-home", placeholder: "Entrez une ville..." %>
         </div>
       </div>
-      <%= submit_tag "Rechercher", class: "btn btn-primary rechercher" %>
+      <%= submit_tag "Rechercher", class: "btn rechercher" %>
     <% end %>
   </div>
 </div>
@@ -16,7 +16,8 @@
 <div class="container-cars-index">
   <div class="voirlacarte-inline">
     <div class="btn rechercher" id="btn-carte">
-      <p class="text-change"><i class="fas fa-map-marked-alt mr-2"></i>Voir la carte</p>
+      <p class="voir-carte"><i class="fas fa-map-marked-alt mr-2"></i>Voir la carte</p>
+      <p class="voir-liste hidden"><i class="fas fa-list-ul mr-2"></i>Voir la liste</p>
     </div>
     <div class="trait"></div>
   </div>

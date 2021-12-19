@@ -7,6 +7,7 @@ $color-orange: #f79e1e;
 
 .search {
   display: flex;
+  color: white;
   width: 100%;
   margin-top: 20px;
   align-items: flex-end;
@@ -69,6 +70,7 @@ $color-orange: #f79e1e;
   background-color: transparent !important;
   border: none;
   border-bottom: 2px solid white;
+  color: white;
   font-family: 'Lato', sans-serif;
   font-size: 22px;
   font-weight: 400;
