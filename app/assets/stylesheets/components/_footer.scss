@@ -66,10 +66,10 @@
 
 
 @media(max-width: 1000px) {
-  .footer {
-    position: relative;
-    top: 1400px;
-  }
+  // .footer {
+  //   position: relative;
+  //   top: 1400px;
+  // }
 }
 
 
@@ -77,8 +77,8 @@
   .footer {
     height: 130px;
     padding: 0px 20px;
-    position: relative;
-    top: 2925px;
+    // position: relative;
+    // top: 2925px;
     flex-direction: column;
 
     a {
