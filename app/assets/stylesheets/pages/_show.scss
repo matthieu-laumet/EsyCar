@@ -176,3 +176,59 @@
   color: rgb(40, 40, 40);
   }
 }
+
+@media(max-width: 500px) {
+  .container-cars-show {
+    flex-direction: column;
+  }
+
+  .left-show {
+    width: 100%;
+  }
+  .right-show {
+    width: 100%;
+    height: 260px;
+    margin-bottom: 30px;
+  }
+
+  .price-show {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #c6c6c6;
+    border-radius: 4px;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    border: 1px solid $color-darkgray;
+    text-align: center;
+
+    .value-price-show {
+      font-size: 40px;
+      color: black;
+      font-weight: 900;
+      line-height: 50px;
+    }
+
+    p {
+      margin-bottom: 0;
+      font-size: 18px;
+      color: black;
+      font-weight: 400;
+    }
+  }
+
+  .address-show {
+    flex-direction: column;
+    #map {
+      border: none;
+    }
+    .address-text {
+      .place-de-parking {
+        width: 100%;
+      }
+    }
+  }
+
+}
