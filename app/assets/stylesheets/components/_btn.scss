@@ -68,3 +68,10 @@ $color-darkgray: rgba(30, 30, 30, .4);
   border-bottom: 1.5px solid $color-darkgray;
   width: 100%;
 }
+
+
+@media(max-width: 500px) {
+  #btn-carte {
+    width: 100%;
+  }
+}

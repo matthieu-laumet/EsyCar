@@ -110,3 +110,20 @@ input:-webkit-autofill,
   input:-webkit-autofill:focus {
     transition: background-color 600000s 0s, color 600000s 0s;
   }
+
+@media(max-width: 500px) {
+  .search {
+    margin-top: 245px;
+    flex-direction: column;
+    align-items: normal;
+
+    .search-address {
+      margin-bottom: 15px;
+    }
+
+    #address {
+      width: 105%;
+    }
+  }
+
+}
