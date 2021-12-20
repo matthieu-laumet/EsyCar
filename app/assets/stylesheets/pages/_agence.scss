@@ -131,3 +131,9 @@ $color-darker-default: #252525;
   }
 
 }
+
+@media(max-width: 500px) {
+ .container-cars-index {
+   min-height: 54vh;
+    }
+  }

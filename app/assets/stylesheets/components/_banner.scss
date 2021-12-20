@@ -72,6 +72,14 @@ $color-orange: #f79e1e;
   }
 }
 
+@media(max-width: 1000px) {
+  .banner-car {
+    .container-banner-car {
+      width: 100%;
+    }
+  }
+}
+
 @media(max-width: 500px) {
   .banner-home {
     height: 95vh;
@@ -87,4 +95,16 @@ $color-orange: #f79e1e;
     }
   }
 
+  .banner-car {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 200px;
+
+    .container-banner-car {
+      .search {
+        margin-top: 10px;
+      }
+    }
+  }
 }
