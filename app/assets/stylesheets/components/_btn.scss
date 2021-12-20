@@ -73,5 +73,6 @@ $color-darkgray: rgba(30, 30, 30, .4);
 @media(max-width: 500px) {
   #btn-carte {
     width: 100%;
+    margin: 0;
   }
 }

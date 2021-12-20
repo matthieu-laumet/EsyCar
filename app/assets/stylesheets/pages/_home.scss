@@ -62,19 +62,21 @@ $color-orange-dark:#f7981d;
   }
 }
 
-@media(max-width: 900px) {
+@media(max-width: 1000px) {
   .container-home {
     position: absolute;
     top: 780px;
-    margin-left: 2%;
-    margin-right: 2%;
+    margin-left: 6%;
+    margin-right: 6%;
   }
 }
 
 @media(max-width: 500px) {
   .container-home {
     position: absolute;
-    top: 780px;
+    top: 960px;
+    padding-left: 3%;
+    padding-right: 3%;
 
     .content-home {
       flex-direction: column;

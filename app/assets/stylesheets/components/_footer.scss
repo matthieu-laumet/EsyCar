@@ -64,10 +64,22 @@
   }
 }
 
+
+@media(max-width: 1000px) {
+  .footer {
+    position: relative;
+    top: 1400px;
+  }
+}
+
+
 @media(max-width: 500px) {
   .footer {
     height: 130px;
     padding: 0px 20px;
+    position: relative;
+    top: 2925px;
+    flex-direction: column;
 
     a {
       font-size: 18px;
@@ -75,6 +87,7 @@
     }
 
     .footer-links {
+      padding-top: 10px;
       margin-right: 5px;
       margin-left: 10px;
       text-align: center;
@@ -82,6 +95,7 @@
 
     .footer-copyright {
       text-align: center;
+      padding-bottom: 10px;
     }
   }
 }
