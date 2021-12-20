@@ -69,3 +69,10 @@
     }
   }
 }
+
+@media(max-width: 500px) {
+  .cards-home {
+    grid-template-columns: 1fr;
+    height: 900px;
+  }
+}

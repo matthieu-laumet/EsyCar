@@ -2,6 +2,7 @@ $color-orange: #f79e1e;
 
 .banner-home {
   height: 500px;
+  width: 100%;
   background-image: asset-url("Banner-01.svg");
   background-size: cover;
   background-position: right;
@@ -11,7 +12,7 @@ $color-orange: #f79e1e;
   .container-banner-home {
     padding-left: 90px;
     padding-top: 50px;
-    width: 41%;
+    width: 47%;
   }
 
   .title {
@@ -48,19 +49,6 @@ $color-orange: #f79e1e;
   }
 }
 
-// #mot-1 {
-//   margin: 0;
-//   font-size: 90px;
-//   font-family: 'Permanent Marker', cursive;
-// }
-
-// #mot-2 {
-//   margin: 0;
-//   margin-left: 16px;
-//   font-size: 90px;
-//   font-family: 'Gloria Hallelujah', cursive;
-// }
-
 .inline {
   display: flex;
   align-items: flex-end;
@@ -72,8 +60,6 @@ $color-orange: #f79e1e;
   margin-bottom: -22px;
   top: -22px;
   height: 140px;
-  // height: 1400px;
-  // background-color: black;
   background-image: asset-url("fond_degrade.png");
   display: flex;
   justify-content: center;
@@ -84,4 +70,21 @@ $color-orange: #f79e1e;
   .container-banner-home {
     width: 70%;
   }
+}
+
+@media(max-width: 500px) {
+  .banner-home {
+    height: 95vh;
+    background-image: asset-url("banner-mobile.svg");
+    position: absolute;
+    top: 57px;
+
+    .container-banner-home {
+      padding-left: 5%;
+      padding-right: 5%;
+      padding-top: 6%;
+      width: 100%;
+    }
+  }
+
 }

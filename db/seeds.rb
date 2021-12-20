@@ -9,28 +9,31 @@ Car.destroy_all
 end
 puts 'users created'
 
-# address = ['16 Villa Gaudelet, Paris', "93 avenue de l'Amandier, Bordeaux", "68 avenue de l'Amandier, Bordeaux", "74 cours Jean Jaures, Bordeaux", "36 rue Victor Hugo, COUDEKERQUE-BRANCHE", "35 Quai des Belges, MARTIGUES", "73 rue Descartes, STRASBOURG",
-#             "92 rue Ernest Renan, CHOLET", "27 rue Saint Germain, GENNEVILLIERS", "16 rue Grande Fusterie, BRÉTIGNY-SUR-ORGE", "72 quai Saint-Nicolas, TOURNEFEUILLE", "29 rue Lenotre, RAMBOUILLET", "79 rue de la Boétie, PLAISIR", "78 rue Banaudon, LYON",
-#           "36 avenue Voltaire, MAISONS-LAFFITTE", "18 avenue Henri Vigneau, Mérignac", "25 Place du Jeu de Paume, VIENNE", "16 rue Clement Marot, PÉRIGUEUX", "22 rue des lieutemants Thomazo, DIGNE-LES-BAINS", "6 Rue de Strasbourg, CLERMONT-FERRAND",
-#         "22 Place Napoléon, LANESTER", "23 rue Goya, LE PERREUX-SUR-MARNE", "63 rue de Raymond Poincaré, NANTES", "73 rue Sadi Carnot, AUBERVILLIERS", "83 Place de la Gare, COGNAC", "3 boulevard Aristide Briand, LE BOUSCAT", "55 rue Michel Ange, LE LAMENTIN",
-#       "20 boulevard Amiral Courbet, ORLY", "26 rue Reine Elisabeth, MÉRIGNAC", "74 boulevard de Prague, NÎMES", "54 rue Berthelot, Bègles", "77 place Maurice-Charretier, CHAMPS-SUR-MARNE", "65 rue de Geneve, ALFORTVILLE", "84 rue de la Boétie, POISSY" ]
+address = ["12 Rue de Rivoli, Paris 1er Arrondissement, Île-de-France, France", "93 Rue des Lavandières, Pessac, Nouvelle-Aquitaine, France", "12 Rue André Lamande, Bordeaux, Nouvelle-Aquitaine, France", "74 Cours Victor Hugo, Bordeaux, Nouvelle-Aquitaine, France", "36 Rue Victor Hugo, Coudekerque-Branche, Hauts-de-France, France", "35 Rue des Amandiers, Martigues, Provence-Alpes-Côte d'Azur, France", "73 Rue René Descartes, Strasbourg, Grand-Est, France",
+            "20 Rue des Rossignols, Mérignac, Nouvelle-Aquitaine, France", "20 Rue des Rossignols, Villeneuve-sur-Lot, Nouvelle-Aquitaine, France", "16 Allée Beauséjour, Brétigny-sur-Orge, Île-de-France, France", "Mairie de Tournefeuille, Tournefeuille, Occitanie, France", "29 Rue Georges Lenotre, Rambouillet, Île-de-France, France", "79 Avenue d'Armorique, Plaisir, Île-de-France, France", "7 Avenue d'Écully, Lyon 9e Arrondissement, Auvergne-Rhône-Alpes, France",
+          "36 Avenue Voltaire, Maisons-Laffitte, Île-de-France, France", "18 Avenue Henri Vigneau, Mérignac, Nouvelle-Aquitaine, France", "25 Place du Jeu de Paume, Vienne, Auvergne-Rhône-Alpes, France", "16 Rue des Fleurs, Les Touches-de-Périgny, Nouvelle-Aquitaine, France", "22 Allée Blériot, Digne-les-Bains, Provence-Alpes-Côte d'Azur, France", "6 Rue de Strasbourg, Clermont-Ferrand, Auvergne-Rhône-Alpes, France",
+        "22 Place Commerciale, Lanester, Bretagne, France", "23 Rue Arthur Dalide, Le Perreux-sur-Marne, Île-de-France, France", "63 Rue Raymond Poincaré, Nanterre, Île-de-France, France", "73 Rue Sadi Carnot, Aubervilliers, Île-de-France, France", "83 Place de la Gare, Cognac, Nouvelle-Aquitaine, France", "3 Avenue Aristide Briand, Le Bouscat, Nouvelle-Aquitaine, France", "55 Rue Albert Camus, Le Lamentin, Martinique, France",
+      "20 Rue d'Orly, Rungis, Île-de-France, France", "26 Rue Alfred de Vigny, Mérignac, Nouvelle-Aquitaine, France", "74 Boulevard de Prague, Nîmes, Occitanie, France", "54 Rue Berthelot, Bègles, Nouvelle-Aquitaine, France", "77 r Place des Acacias, Champs-sur-Marne, Île-de-France, France", "65 Rue de Geneve, Alfortville, Île-de-France, France", "12 Rue de Pompeyrie, Agen, Nouvelle-Aquitaine, France", "22 Rue du Bocage, Blanquefort, Nouvelle-Aquitaine, France",
+    "35 Rue Tournefort, Paris 5e Arrondissement, Île-de-France, France", "22 Rue de Marmande, Villeneuve-sur-Lot, Nouvelle-Aquitaine, France", "Lyon 2e Arrondissement, Lyon, Auvergne-Rhône-Alpes, France", "Rue de la Gare, Limoux, Occitanie, France", "36 Quai des Célestins, Paris 4e Arrondissement, Île-de-France, France", "Vieux-Port, Marseille, Provence-Alpes-Côte d'Azur, France" ]
 
 
-address = ['Paris', "Bordeaux", "COUDEKERQUE-BRANCHE", "MARTIGUES", "STRASBOURG", "Saint-Médard", "Coutras", "Pessac", "Pantin", "Toulouse",
-            "CHOLET", "GENNEVILLIERS", "BRÉTIGNY-SUR-ORGE", "TOURNEFEUILLE", "RAMBOUILLET", "PLAISIR", "LYON", "Blagnac", "Toulouse", "Tour Eiffel",
-          "MAISONS-LAFFITTE", "Mérignac", "PÉRIGUEUX", "DIGNE-LES-BAINS", "CLERMONT-FERRAND", "Rions", "langon",
-        "LANESTER", "LE PERREUX-SUR-MARNE", "6NANTES", "AUBERVILLIERS", "COGNAC", "LE BOUSCAT", "LE LAMENTIN",
-      "ORLY", "NÎMES", "Bègles", "CHAMPS-SUR-MARNE", "ALFORTVILLE", "POISSY" ]
+# address = ['Paris', "Bordeaux", "COUDEKERQUE-BRANCHE", "MARTIGUES", "STRASBOURG", "Saint-Médard", "Coutras", "Pessac", "Pantin", "Toulouse",
+#             "CHOLET", "GENNEVILLIERS", "BRÉTIGNY-SUR-ORGE", "TOURNEFEUILLE", "RAMBOUILLET", "PLAISIR", "LYON", "Blagnac", "Toulouse", "Tour Eiffel",
+#           "MAISONS-LAFFITTE", "Mérignac", "PÉRIGUEUX", "DIGNE-LES-BAINS", "CLERMONT-FERRAND", "Rions", "langon",
+#         "LANESTER", "LE PERREUX-SUR-MARNE", "6NANTES", "AUBERVILLIERS", "COGNAC", "LE BOUSCAT", "LE LAMENTIN",
+#       "ORLY", "NÎMES", "Bègles", "CHAMPS-SUR-MARNE", "ALFORTVILLE", "POISSY" ]
 
-# number = rand(1..30)
-# Car.create!(brand: Faker::Vehicle.make, model: Faker::Vehicle.model, year_of_production: Faker::Vehicle.year, price_per_day: Faker::Number.number(digits: 2), address: address.sample, user_id: User.find(number).id)
 
+#   number = rand(1..30)
+# Car.create!(brand: Faker::Vehicle.make, model: Faker::Vehicle.model, year_of_production: Faker::Vehicle.year, price_per_day: Faker::Number.number(digits: 2), address: address[3], user_id: User.find(number).id)
 x = 0
 
-40.times do
+41.times do
   number = rand(1..30)
   Car.create!(brand: Faker::Vehicle.make, model: Faker::Vehicle.model, year_of_production: Faker::Vehicle.year, price_per_day: Faker::Number.number(digits: 2), address: address[x], user_id: User.find(number).id)
   x += 1
 end
 
 puts 'cars created'
+
+# Car.create!(brand: Faker::Vehicle.make, model: Faker::Vehicle.model, year_of_production: Faker::Vehicle.year, price_per_day: Faker::Number.number(digits: 2), address: , user_id: 1)
