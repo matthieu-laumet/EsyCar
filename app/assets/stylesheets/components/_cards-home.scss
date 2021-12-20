@@ -70,6 +70,14 @@
   }
 }
 
+@media(max-width: 900px) {
+  .cards-home {
+    grid-template-columns: 1fr 1fr;
+    height: 500px;
+  }
+}
+
+
 @media(max-width: 500px) {
   .cards-home {
     grid-template-columns: 1fr;
