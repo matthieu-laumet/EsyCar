@@ -28,7 +28,6 @@ class CarsController < ApplicationController
           info_window: render_to_string(partial: "info_window", locals: { car: car })
         }
     end
-    # raise
   end
 
 end
