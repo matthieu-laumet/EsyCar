@@ -12,6 +12,20 @@ $color-darkgray: rgba(30, 30, 30, .4);
    }
 }
 
+.louer {
+  background-color: none;
+  border: 2px solid $color-default;
+  border-radius: 6px;
+  color: white;
+  padding: 4px 10px;
+
+  &:hover {
+    color: $color-orange;
+    border: 3px solid $color-orange;
+    font-weight: 700;
+  }
+}
+
 .rechercher {
   background-color: none;
   border: 3px solid $color-orange;

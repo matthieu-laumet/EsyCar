@@ -68,11 +68,16 @@ $color-darkgray: rgb(30, 30, 30);
     color: $color-gray;
     // margin-right: 15px;
     margin-left: 15px;
-    width: 80px;
+    width: 170px;
 
     &:hover {
       color: $color-darkgray;
+      font-weight: 700;
     }
+  }
+
+  #acceuil {
+    width: 70px;
   }
 
   .menus {

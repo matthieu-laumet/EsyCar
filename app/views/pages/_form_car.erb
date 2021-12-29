@@ -1,0 +1,10 @@
+<div class="modal-container">
+  <h1 id="Nouveau-truc">Nouveau truc</h1>
+    <%= simple_form_for(car) do |f| %>
+      <%= f.input :modele, label: 'Model', placeholder: 'Modele de la voiture' %>
+      <%= f.input :seats, label: 'Sieges', placeholder: '4' %>
+      <%= f.input :photo, as: :file, class:"btn btn-light" %>
+      <%= f.button :submit, 'Créer !', class: 'btn btn-danger' %>
+    <% end %>
+    <span class="modal-close" id="modal-close-new"><i class="fas fa-times"></i></span>
+</div>
