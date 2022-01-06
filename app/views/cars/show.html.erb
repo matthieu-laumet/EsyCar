@@ -21,8 +21,8 @@
       <%= image_tag 'card-en-construction-01.png', crop: :fill, class: "card-photo-show" %>
       <div class="card-show-text">
         <div class="text-car-in-line">
-          <h3 class="card-title-show m-0"><%= @car.brand %></h3>
-          <h3 class="car-model-show ml-2 mb-0"><%= @car.model%></h3>
+          <h3 class="card-title-show m-0"><%= @car.brand.tr('[' ']' '"','').capitalize %></h3>
+          <h3 class="car-model-show ml-2 mb-0"><%= @car.model.tr('[' ']' '"','') %></h3>
         </div>
         <h4 class="year"><%= @car.year_of_production %></h4>
         <div class="price-show">
