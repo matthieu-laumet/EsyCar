@@ -31,9 +31,11 @@ address = ["12 Rue de Rivoli, Paris 1er Arrondissement, Île-de-France, France",
   nissan = %w(Ariya Juke Micra Qashqai X-Trail).sample
   citroen = %w(Ami Berlingo C1 C3 c4 Jumper).sample
   opel = %w(Astra Corsa Insignia Mokka).sample
+  seat = %w(Arona Ateca Ibiza Leon Tarraco).sample
 
-  association = { "toyota" => toyota, "ford" => ford, "renault" => renault, "peugeot" => peugeot, "audi" => audi, "volkswagen" => volkswagen, "dacia" => dacia, "nissan" => nissan, "citroen" => citroen, "opel" => opel }
-  hasard_brand = ["toyota", "ford", "renault", "peugeot", "audi", "volkswagen", "dacia", "nissan", "citroen", "opel"].sample
+  association = { "toyota" => toyota, "ford" => ford, "renault" => renault, "peugeot" => peugeot, "audi" => audi, "volkswagen" => volkswagen,
+                  "dacia" => dacia, "nissan" => nissan, "citroen" => citroen, "opel" => opel, "seat" => seat }
+  hasard_brand = ["toyota", "ford", "renault", "peugeot", "audi", "volkswagen", "dacia", "nissan", "citroen", "opel", "seat"].sample
 
   select_car = association.select do |brand, model|
     brand == hasard_brand
@@ -41,7 +43,9 @@ address = ["12 Rue de Rivoli, Paris 1er Arrondissement, Île-de-France, France",
 
   number = rand(1..30)
 
-  Car.create!(brand: select_car.keys, model: select_car.values, year_of_production: Faker::Vehicle.year, price_per_day: Faker::Number.number(digits: 2), address: address[x], user_id: User.find(number).id)
+  # p select_car.keys.first.tr('"', '')
+
+  Car.create!(brand: select_car.keys.first.tr('"', '').capitalize, model: select_car.values.first.tr('"', ''), year_of_production: Faker::Vehicle.year, price_per_day: Faker::Number.number(digits: 2), address: address[x], user_id: User.find(number).id)
   print "#"
   x += 1
 end

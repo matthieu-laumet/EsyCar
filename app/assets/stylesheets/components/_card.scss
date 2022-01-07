@@ -19,14 +19,16 @@ $color-darkgray: rgb(30, 30, 30);
     height: 250px;
     border-radius: 6px;
 
-    .fa-trash-alt {
+    .card-links {
+      top: 4px;
       position: absolute;
-      top: 3%;
-      right: 3%;
-      color: #535353;
+      right: 10px;
 
-      &:hover {
-        color: #afafaf;
+      .fas {
+        color: $color-darkgray;
+        &:hover {
+          color: $color-orange;
+        }
       }
     }
   }
