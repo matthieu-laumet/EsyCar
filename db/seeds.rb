@@ -3,7 +3,7 @@ require 'faker'
 User.destroy_all
 Car.destroy_all
 
-  User.create!(email: 'julia@gmail.com', password: 'azerty', first_name: 'Julia', last_name: 'Duwagon')
+  User.create!(email: 'julia@gmail.com', password: 'azerty', first_name: 'Julia', last_name: 'Duwagon', admin: true)
 30.times do
   User.create!(email: Faker::Internet.email, password: Faker::Alphanumeric.alphanumeric(number: 10), first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
   print "#"

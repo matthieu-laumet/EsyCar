@@ -32,6 +32,7 @@ gem 'devise'
 gem 'pg_search'
 gem 'geocoder'
 gem 'faker'
+gem 'pundit'
 # gem 'cloudinary', '~> 1.16.0'
 
 gem 'autoprefixer-rails', '10.2.5'

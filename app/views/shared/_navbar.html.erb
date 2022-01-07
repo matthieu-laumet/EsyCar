@@ -11,7 +11,11 @@
 
 
     <div class="menus">
-      <%= link_to 'Accueil', root_path, class:"menu-link", id:"acceuil" %> <%= link_to 'Listes des véhicules', cars_path, class:"menu-link" %> <%= link_to 'Louer ma voiture', new_car_path, class:"menu-link btn", id:"louer"%>
+      <%= link_to 'Accueil', root_path, class:"menu-link", id:"acceuil" %>
+      <%= link_to 'Listes des véhicules', cars_path, class:"menu-link" %>
+      <% if policy(Car).create? %>
+        <%= link_to 'Louer ma voiture', new_car_path, class:"menu-link btn", id:"louer"%>
+      <% end %>
     </div>
   </div>
 

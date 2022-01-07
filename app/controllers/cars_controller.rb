@@ -1,8 +1,11 @@
 class CarsController < ApplicationController
+  before_action :set_car, only: [:show, :edit, :update, :destroy]
+
   def index
     # raise
     if params[:address].present?
-      @cars = Car.near(params[:address], 15).where.not(latitude: nil, longitude: nil)
+      @cars = policy_scope(Car).near(params[:address], 15).where.not(latitude: nil, longitude: nil)
+      # @cars = Car.near(params[:address], 15).where.not(latitude: nil, longitude: nil)
 
       @markers = @cars.geocoded.map do |car|
         {
@@ -12,12 +15,11 @@ class CarsController < ApplicationController
         }
       end
     else
-      @cars = Car.all
+      @cars = policy_scope(Car)
     end
   end
 
   def show
-    @car = Car.find(params[:id])
     @booking = Booking.new
 
     @cars = Car.where(address: @car.address)
@@ -30,8 +32,48 @@ class CarsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @car.update(car_params)
+      redirect_to car_path(@car), notice: 'Votre voiture a bien été mise à jour'
+    else
+      render :edit
+    end
+  end
+
   def new
     @car = Car.new
+    authorize @car
+  end
+
+  def create
+    @car = Car.new(car_params)
+    @car.user = current_user
+    authorize @car
+
+    if @car.save
+      redirect_to car_path(@car)
+    else
+      render :new
+    end
+  end
+
+  def destroy
+    @car.destroy
+    redirect_to cars_path, notice: 'Votre voiture a bien été suprimée'
+  end
+
+  private
+
+  def set_car
+    @car = Car.find(params[:id])
+    authorize @car
+  end
+
+  def car_params
+    params.require(:car).permit(:brand, :model, :year_of_production, :address, :price_per_day)
   end
 
 end
