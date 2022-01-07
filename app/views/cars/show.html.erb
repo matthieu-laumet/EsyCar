@@ -21,7 +21,7 @@
       <%= image_tag 'card-en-construction-01.png', crop: :fill, class: "card-photo-show" %>
       <div class="card-show-text">
         <div class="text-car-in-line">
-          <h3 class="card-title-show m-0"><%= @car.brand.tr('[' ']' '"','').capitalize %></h3>
+          <h3 class="card-title-show m-0"><%= @car.brand %></h3>
           <h3 class="car-model-show ml-2 mb-0"><%= @car.model.tr('[' ']' '"','') %></h3>
         </div>
         <h4 class="year"><%= @car.year_of_production %></h4>
@@ -37,7 +37,7 @@
         <div class="address-inline mb-3"><i class="fas fa-map-marker-alt mr-2"></i><p><%= @car.address %></p></div>
         <h5>Contactez le propriétaire du véhicule : </h5>
         <div class="address-inline"><i class="fas fa-user mr-3"></i><p><%= @car.user.first_name %>&thinsp;<%= @car.user.last_name %></p></div>
-        <div class="address-inline mb-3"><i class="fas fa-at mr-2"></i><p><%= @car.user.first_name.downcase %>.<%= @car.user.last_name.downcase %>@gmail.com</p></div>
+        <div class="address-inline mb-3"><i class="fas fa-at mr-2"></i><p><%= @car.user.email %></p></div>
         <div class="place-de-parking">
           <p>Cette voiture a une place de parking réservée. Pas besoin de chercher une place au retour !</p>
         </div>
