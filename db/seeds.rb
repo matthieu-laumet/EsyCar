@@ -3,7 +3,7 @@ require 'faker'
 User.destroy_all
 Car.destroy_all
 
-  User.create!(email: 'julia@gmail.com', password: 'azerty', first_name: 'Julia', last_name: 'Duwagon')
+  User.create!(email: 'julia@gmail.com', password: 'azerty', first_name: 'Julia', last_name: 'Duwagon', admin: true)
 30.times do
   User.create!(email: Faker::Internet.email, password: Faker::Alphanumeric.alphanumeric(number: 10), first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
   print "#"
@@ -28,9 +28,12 @@ address = ["12 Rue de Rivoli, Paris 1er Arrondissement, Île-de-France, France",
   audi = %w(A1 A3 A4 A5 E-tron Q3 Q5 Q7 R8).sample
   volkswagen = %w(Arteon Golf Polo T-cross T-roc Touareg Touran).sample
   dacia = %w(Duster Jogger Logan Sandero).sample
+  nissan = %w(Ariya Juke Micra Qashqai X-Trail).sample
+  citroen = %w(Ami Berlingo C1 C3 c4 Jumper).sample
+  opel = %w(Astra Corsa Insignia Mokka).sample
 
-  association = { "toyota" => toyota, "ford" => ford, "renault" => renault, "peugeot" => peugeot, "audi" => audi, "volkswagen" => volkswagen, "dacia" => dacia }
-  hasard_brand = ["toyota", "ford", "renault", "peugeot", "audi", "volkswagen", "dacia"].sample
+  association = { "toyota" => toyota, "ford" => ford, "renault" => renault, "peugeot" => peugeot, "audi" => audi, "volkswagen" => volkswagen, "dacia" => dacia, "nissan" => nissan, "citroen" => citroen, "opel" => opel }
+  hasard_brand = ["toyota", "ford", "renault", "peugeot", "audi", "volkswagen", "dacia", "nissan", "citroen", "opel"].sample
 
   select_car = association.select do |brand, model|
     brand == hasard_brand
@@ -38,7 +41,7 @@ address = ["12 Rue de Rivoli, Paris 1er Arrondissement, Île-de-France, France",
 
   number = rand(1..30)
 
-  Car.create!(brand: select_car.keys.capitalize, model: select_car.values, year_of_production: Faker::Vehicle.year, price_per_day: Faker::Number.number(digits: 2), address: address[x], user_id: User.find(number).id)
+  Car.create!(brand: select_car.keys, model: select_car.values, year_of_production: Faker::Vehicle.year, price_per_day: Faker::Number.number(digits: 2), address: address[x], user_id: User.find(number).id)
   print "#"
   x += 1
 end

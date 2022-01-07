@@ -1,0 +1,31 @@
+.container-new {
+  min-height: 86vh;
+}
+
+.formulaire-new {
+  display: flex;
+  background-color: white;
+  height: 700px;
+  padding-left: 14%;
+  align-items: center;
+
+  .text-form{
+    width: 30%;
+    margin-right: 2%;
+  }
+
+  h1 {
+    width: 90%;
+    font-weight: 900;
+    font-size: 33px;
+    color: $color-orange-dark;
+    margin-bottom: 30px;
+  }
+
+  img {
+    width: 68%;
+    height: 100%;
+    object-fit: cover;
+    -webkit-clip-path: polygon(0px 0,100% 0,100% 100%,64px 100%);
+  }
+}

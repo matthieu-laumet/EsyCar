@@ -12,11 +12,11 @@ $color-darkgray: rgba(30, 30, 30, .4);
    }
 }
 
-.louer {
+#louer {
   background-color: none;
   border: 2px solid $color-default;
   border-radius: 6px;
-  color: white;
+  color: $color-orange-dark;
   padding: 4px 10px;
 
   &:hover {
