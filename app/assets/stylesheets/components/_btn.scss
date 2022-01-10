@@ -1,6 +1,7 @@
 $color-default: #868686;
 $color-dark-default: #505050;
 $color-orange: #f79e1e;
+$color-orange-fonce: #d87e00;
 $color-darkgray: rgba(30, 30, 30, .4);
 
 .btn-primary {
@@ -10,6 +11,14 @@ $color-darkgray: rgba(30, 30, 30, .4);
      background-color: $color-dark-default;
      border: $color-dark-default;
    }
+}
+
+#btn-banner {
+  background-color: rgba($color: $color-orange, $alpha: .5);
+  &:hover {
+    background-color: rgba($color: $color-orange-fonce, $alpha: .9);
+    color: white;
+  }
 }
 
 #louer {
@@ -34,6 +43,7 @@ $color-darkgray: rgba(30, 30, 30, .4);
   font-weight: 700;
   font-size: 20px;
   padding: 6px 14px;
+  height: 52px;
 
   &:hover {
     color: $color-orange;

@@ -1,42 +1,49 @@
 $color-orange: #f79e1e;
+$color-brown:#3b270b;
 
 .banner-home {
-  height: 500px;
+  height: 65vh;
   width: 100%;
-  background-image: asset-url("Banner-01.svg");
+  background-image: asset-url("Voiture_banner.png");
   background-size: cover;
   background-position: right;
   color: rgb(40, 40, 40);
   margin-bottom: 40px;
 
   .container-banner-home {
-    padding-left: 90px;
-    padding-top: 50px;
-    width: 47%;
+    padding-left: 14%;
+    padding-top: 8%;
+    padding-bottom: 2%;
+    width: 50%;
   }
 
+
   .title {
-    color: white;
+    color: $color-brown;
     margin-bottom: 5px;
-    font-size: 55px;
+    font-size: 50px;
     font-family: 'Lato', sans-serif;
     font-weight: 900;
   }
 
   h2 {
-    font-family: 'Rubik', sans-serif;
-    font-size: 40px;
-    margin-bottom: 5px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    line-height: 40px;
+    font-size: 50px;
+    margin-bottom: 25px;
     color: $color-orange;
+    color: #ff9500;
+    text-shadow: $color-brown 1px 1px 1px;
   }
 
   p {
     font-family: 'Rubik', sans-serif;
-    font-size: 20px;
+    font-size: 30px;
     margin: 0;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
     margin-top: 5px;
-    color: white;
+    color: $color-brown;
   }
 
   .focus {
