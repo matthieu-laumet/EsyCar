@@ -32,4 +32,19 @@ class Car < ApplicationRecord
             "Ariya", "Juke", "Micra", "Qashqai", "X-Trail",
             "Ami", "Berlingo", "C1", "C3", "C4", "Jumper",
             "Astra", "Corsa", "Insignia", "Mokka"].sort
+
+  BRANDS_MODELS = {"Toyota" => ["Auris", "Avensis", "Aygo", "C-HR", "Camry", "Corolla", "Cruiser", "Prius", "Proace", "Rav4", "Yaris"],
+                "Ford" => ["Fiesta", "Focus", "Kuga", "Mustang", "Puma", "Ranger", "Transit"],
+                "Renault" => ["Arkana", "Captur", "Clio", "Espace", "Kadjar", "Kangoo", "Koleos", "Megane", "Twingo", "Zoe"],
+                "Peugeot" => ["108", "2008", "208", "3008", "301", "308", "5008", "508", "Partner"],
+                "Audi" => ["A1", "A3", "A4", "A5", "E-Tron", "Q3", "Q5", "Q7", "R8"],
+                "Volkswagen" => ["Arteon", "Golf", "Polo", "T-cross", "T-Roc", "Touareg", "Touran"],
+                "Dacia" => ["Duster", "Jogger", "Logan", "Sandero"],
+                "Nissan" => ["Ariya", "Juke", "Micra", "Qashqai", "X-Trail"],
+                "Citroen" => ["Ami", "Berlingo", "C1", "C3", "C4", "Jumper"],
+                "Opel" => ["Astra", "Corsa", "Insignia", "Mokka"],
+                "Seat" => ["Arona", "Ateca", "Ibiza", "Leon", "Tarraco"]
+              }
+
+
 end
