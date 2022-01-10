@@ -30,19 +30,22 @@ import { showCard } from '../plugins/show-card';
 import { initAutocomplete } from '../plugins/init_autocomplete.js';
 import { showMap } from '../plugins/display_map';
 import { datePicker } from '../plugins/date-picker';
-import { initSelect2 } from '../component/init_select2';
+import { initSelect2 } from '../component/init_select2.js';
+import { selectModel } from '../component/select_model_from_brand.js';
 
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
-  // initSelect2();
   initSelect2();
   actionModal();
-  changeColor();
+  // changeColor();
   initMapbox();
   showCard();
   showMap();
   datePicker();
   initAutocomplete();
+  selectModel();
 });
+
+import "controllers"

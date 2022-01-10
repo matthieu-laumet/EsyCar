@@ -3,12 +3,17 @@
     <div class="text-form">
       <h1>Complétez vos revenus en partageant votre voiture</h1>
       <%= simple_form_for(@car) do |f| %>
-        <%#= f.input :brand, label: 'Marque', placeholder: 'Marque de la voiture' %>
-        <%= f.input :brand, label: 'Marque', placeholder: 'Marque de la voiture',
-                    collection: Car::BRANDS,
-                    input_html: { data: { controller: 'select2' }} %>
-        <%= f.input :model, label: 'Modèle', placeholder: 'Modèle de la voiture',
-                    collection: Car::MODELS %>
+
+          <%= f.input :brand, label: 'Marque', placeholder: 'Marque de la voiture',
+                      collection: Car::BRANDS_MODELS.keys.sort,
+                      input_html: { data: { controller: 'select2' }} %>
+
+
+
+          <%= f.input :model, label: 'Modèle', placeholder: 'Modèle de la voiture',
+                      collection: Car::BRANDS_MODELS["Ford"] %>
+
+
         <%= f.input :year_of_production, label: 'Année', placeholder: 'Année...' %>
         <%= f.input :address, label: 'address', placeholder: 'Adresse...' %>
         <%= f.input :price_per_day, label: 'Votre prix par jour ?', placeholder: '.... €' %>
@@ -16,6 +21,6 @@
         <%= f.button :submit, 'Créer !', class: 'btn btn-danger' %>
       <% end %>
     </div>
-    <%# <%= image_tag "photo_inscription.jpeg" %>
+    <%= image_tag "photo_inscription.jpeg" %>
   </div>
 </div>
