@@ -8,12 +8,62 @@
                       collection: Car::BRANDS_MODELS.keys.sort,
                       input_html: { data: { controller: 'select2' }} %>
 
-          <div class="model-car">
+          <div class="model-car-audi">
             <%= f.input :model, label: 'Modèle', placeholder: 'Modèle de la voiture',
-                        collection: Car::MODELS %>
+                        collection: Car::BRANDS_MODELS['Audi']  %>
           </div>
 
-        <%= f.input :year_of_production, label: 'Année', placeholder: 'Année...' %>
+          <div class="model-car-citroen d-none">
+            <%= f.input :model, label: 'Modèle', placeholder: 'Modèle de la voiture',
+                        collection: Car::BRANDS_MODELS['Citroen']  %>
+          </div>
+
+          <div class="model-car-dacia d-none">
+            <%= f.input :model, label: 'Modèle', placeholder: 'Modèle de la voiture',
+                        collection: Car::BRANDS_MODELS['Dacia']  %>
+          </div>
+
+          <div class="model-car-ford d-none">
+            <%= f.input :model, label: 'Modèle', placeholder: 'Modèle de la voiture',
+                        collection: Car::BRANDS_MODELS['Ford']  %>
+          </div>
+
+          <div class="model-car-nissan d-none">
+            <%= f.input :model, label: 'Modèle', placeholder: 'Modèle de la voiture',
+                        collection: Car::BRANDS_MODELS['Nissan']  %>
+          </div>
+
+          <div class="model-car-opel d-none">
+            <%= f.input :model, label: 'Modèle', placeholder: 'Modèle de la voiture',
+                        collection: Car::BRANDS_MODELS['Opel']  %>
+          </div>
+
+          <div class="model-car-peugeot d-none">
+            <%= f.input :model, label: 'Modèle', placeholder: 'Modèle de la voiture',
+                        collection: Car::BRANDS_MODELS['Peugeot']  %>
+          </div>
+
+          <div class="model-car-renault d-none">
+            <%= f.input :model, label: 'Modèle', placeholder: 'Modèle de la voiture',
+                        collection: Car::BRANDS_MODELS['Renault']  %>
+          </div>
+
+          <div class="model-car-seat d-none">
+            <%= f.input :model, label: 'Modèle', placeholder: 'Modèle de la voiture',
+                        collection: Car::BRANDS_MODELS['Seat']  %>
+          </div>
+
+          <div class="model-car-toyota d-none">
+            <%= f.input :model, label: 'Modèle', placeholder: 'Modèle de la voiture',
+                        collection: Car::BRANDS_MODELS['Toyota']  %>
+          </div>
+
+          <div class="model-car-volkswagen d-none">
+            <%= f.input :model, label: 'Modèle', placeholder: 'Modèle de la voiture',
+                        collection: Car::BRANDS_MODELS['Volkswagen']  %>
+          </div>
+
+        <%= f.input :year_of_production, label: 'Année', placeholder: '20XX' %>
         <%#= f.input :address, label: 'address', placeholder: 'Adresse...' %>
         <%= text_field_tag :address, params[:address], class: "form-control-home", label: 'Adresse', placeholder: "Entrez une adresse..." %>
         <%= f.input :price_per_day, label: 'Votre prix par jour ?', placeholder: '.... €' %>
