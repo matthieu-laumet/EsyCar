@@ -11,6 +11,8 @@
           <div class="form-group select required car_model">
             <select class="form-control select required" placeholder="Modèle de la voiture" name="car[model]" id="car_model">
               <% Car::BRANDS_MODELS.each do |brand, model| %>
+                <option value="" label="<%#= brand %>" class="text-bold"></option>
+                <option value="" label="<%= brand %>" class="text-bold"></option>
                 <% model.each do |v| %>
                   <option value= <%= brand %>><%= v %></option>
                 <% end %>
