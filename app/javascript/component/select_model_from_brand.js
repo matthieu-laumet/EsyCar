@@ -1,11 +1,7 @@
 const selectModel = () => {
   const brand = document.querySelector('#car_brand');
-<<<<<<< HEAD
-  const model = document.querySelector('div.model-car select');
-=======
   const modelOption = document.querySelector('#car_model');
   const allModels = document.querySelectorAll('#car_model option')
->>>>>>> b6d281dbece431d59df3acf829d068f275f25964
 
   if (allModels) {
     // brand.remove(0);
