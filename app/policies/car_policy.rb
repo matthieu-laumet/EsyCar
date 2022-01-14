@@ -1,8 +1,7 @@
 class CarPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.all
-      # scope.where(user: user)
+      user.admin ? scope.all : scope.where.not(user: user)
     end
   end
 
