@@ -5,7 +5,22 @@ const selectModel = () => {
 
   if (allModels) {
     // brand.remove(0);
+    if (brand.value == 'Audi') {
+      allModels.forEach((model) => {
+        model.style.display = "block"
+        if (model.value == "Audi") {
+          modelOption.selectedOptions[0].value = modelOption.selectedOptions[0].text
+        } else {
+          model.style.display = "none"
+        }
+      });
+    }
     brand.addEventListener('change', (event) => {
+      if (brand.value == "") {
+        allModels.forEach((model) => {
+          model.style.display = "block"
+        });
+      }
       if (brand.value == 'Toyota') {
         allModels.forEach((model) => {
           model.style.display = "block"
@@ -124,15 +139,6 @@ const selectModel = () => {
       modelOption.selectedOptions[0].value = modelOption.selectedOptions[0].text
     })
   }
-  // model.selectedOptions[0].value = model.selectedOptions[0].text
-
-  // let selectobject = document.getElementById("car_model");
-  // for (let i = 0; i < selectobject.length; i++) {
-  //   if (selectobject.options[i].value == 'Toyota')
-  //     selectobject.remove(i);
-  // }
-
-
 }
 
 export { selectModel };

@@ -32,6 +32,7 @@ import { showMap } from '../plugins/display_map';
 import { datePicker } from '../plugins/date-picker';
 import { initSelect2 } from '../component/init_select2.js';
 import { selectModel } from '../component/select_model_from_brand.js';
+import { selectYear } from '../component/select_year_car.js';
 
 // import { initSelect2 } from '../components/init_select2';
 
@@ -46,6 +47,7 @@ document.addEventListener('turbolinks:load', () => {
   datePicker();
   initAutocomplete();
   selectModel();
+  selectYear();
 });
 
 import "controllers"
