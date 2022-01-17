@@ -67,7 +67,7 @@ $color-brown:#3b270b;
   margin-bottom: -22px;
   top: -22px;
   height: 140px;
-  background-image: asset-url("fond_degrade.png");
+  background-image: asset-url("fond_degrade2.png");
   display: flex;
   justify-content: center;
   align-items: center;
@@ -89,16 +89,33 @@ $color-brown:#3b270b;
 
 @media(max-width: 500px) {
   .banner-home {
-    height: 95vh;
-    background-image: asset-url("banner-mobile.svg");
-    position: absolute;
-    top: 63px;
+    height: 93vh;
+    background-image: asset-url("banner-mobile.png");
+    object-fit: cover;
+    background-position-y: -120px;
+    // position: absolute;
+    // top: 63px;
+
+    .title {
+      font-size: 34px;
+    }
+    h2 {
+      font-size: 36px;
+    }
+    p {
+      font-size: 22px;
+      line-height: 26px;
+    }
 
     .container-banner-home {
       padding-left: 5%;
       padding-right: 5%;
-      padding-top: 12%;
+      padding-top: 5%;
       width: 100%;
+    }
+
+    .ap-input-icon {
+      right: 10px;
     }
   }
 
@@ -107,9 +124,10 @@ $color-brown:#3b270b;
     margin: 0;
     width: 100%;
     height: 200px;
+    background-position-y: -200px;
 
     .container-banner-car {
-      width: 80%;
+      width: 90%;
       .search {
         margin-top: 10px;
       }

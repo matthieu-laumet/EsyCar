@@ -87,3 +87,49 @@ $color-orange-very-dark:#db8718;
     -webkit-clip-path: polygon(0px 0,100% 0,100% 100%,64px 100%);
   }
 }
+
+@media(max-width: 500px) {
+  .formulaire-new {
+    flex-direction: column-reverse;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-bottom: 30px;
+
+    .deux-columns {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    #car_brand {
+      width: 170px;
+    }
+    #car_model {
+      width: 170px;
+    }
+    #car_year_of_production {
+      width: 170px;
+    }
+    #car_price_per_day {
+      width: 170px;
+    }
+
+    img {
+      width: 112%;
+      -webkit-clip-path: none;
+      margin-bottom: 20px;
+      height: 330px;
+    }
+
+    .text-form {
+      width: 100%;
+      margin-right: 0;
+      h1 {
+        display: none;
+      }
+      .titre-formulaire {
+        opacity: .7;
+        font-size: 14px;
+      }
+    }
+  }
+}

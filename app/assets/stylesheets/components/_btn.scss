@@ -3,6 +3,7 @@ $color-dark-default: #505050;
 $color-orange: #f79e1e;
 $color-orange-fonce: #d87e00;
 $color-darkgray: rgba(30, 30, 30, .4);
+$color-brown:#3b270b;
 
 .btn-primary {
   background-color: $color-default;
@@ -12,6 +13,19 @@ $color-darkgray: rgba(30, 30, 30, .4);
      border: $color-dark-default;
    }
 }
+
+#clic-avatar-mobile {
+  display: none;
+}
+
+#clic-avatar {
+  display: block;
+}
+
+.navbar-toggler {
+    border: rgba($color-brown, $alpha: 0.5) 1px solid;
+    border-radius: 6px;
+  }
 
 #btn-banner {
   background-color: rgba($color: $color-orange, $alpha: .5);
@@ -114,5 +128,17 @@ $color-darkgray: rgba(30, 30, 30, .4);
   #btn-carte {
     width: 100%;
     margin: 0;
+  }
+
+  #btn-banner {
+    height: 70px;
+  }
+
+  #clic-avatar-mobile {
+    display: block;
+  }
+
+  #clic-avatar {
+    display: none;
   }
 }

@@ -123,15 +123,26 @@ input:-webkit-autofill,
 
 @media(max-width: 500px) {
   .search {
-    margin-top: 300px;
+    margin-top: 20px;
     flex-direction: column;
     align-items: normal;
 
     .search-address {
-      margin-bottom: 25px;
+      margin-bottom: 20px;
+    }
+
+    .search-inline {
+      #address {
+        height: 60px;
+      }
+    }
+
+    #mobile-search-index {
+      width: 106%;
     }
 
     #address {
+      height: 70px;
       width: 105%;
     }
   }

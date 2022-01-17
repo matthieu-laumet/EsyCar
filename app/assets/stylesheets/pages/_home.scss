@@ -5,6 +5,12 @@ $color-orange-dark:#f7981d;
   $color-orange: #f79e1e !important;
 }
 
+.links-mobiles {
+  .mobile-only {
+    display: none;
+  }
+}
+
 .container-home {
   min-height: 41vh;
   margin-right: 10%;
@@ -62,26 +68,40 @@ $color-orange-dark:#f7981d;
   }
 }
 
-@media(max-width: 1000px) {
-  .container-home {
-    position: absolute;
-    top: 780px;
-    margin-left: 6%;
-    margin-right: 6%;
-  }
-}
+// @media(max-width: 1000px) {
+//   .container-home {
+//     position: absolute;
+//     top: 780px;
+//     margin-left: 6%;
+//     margin-right: 6%;
+//   }
+// }
 
 @media(max-width: 500px) {
   .container-home {
-    position: absolute;
-    top: 930px;
+//     position: absolute;
+//     top: 930px;
     padding-left: 3%;
     padding-right: 3%;
+    margin-left: 5%;
+    margin-right: 5%;
+
+    .menu-link {
+      display: none;
+    }
+
+    .links-mobiles {
+      display: flex;
+      display: block;
+      .mobile-only {
+        display: block;
+      }
+    }
 
     .content-home {
       flex-direction: column;
       align-items: center;
-      margin-bottom: 100px;
+      margin-bottom: 60px;
 
       .content-text {
         width: 100%;

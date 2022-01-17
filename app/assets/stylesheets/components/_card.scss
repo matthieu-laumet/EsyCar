@@ -127,7 +127,7 @@ $color-darkgray: rgb(30, 30, 30);
 
 @media(max-width: 500px) {
   .cards {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     // height: 900px;
 
     .card {

@@ -43,3 +43,9 @@ $color-orange-dark:#f7981d;
     padding-left: 35px;
   }
 }
+
+@media(max-width: 500px) {
+  .new_car {
+    width: 100%;
+  }
+}
