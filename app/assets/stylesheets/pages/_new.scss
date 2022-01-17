@@ -16,13 +16,17 @@
 .formulaire-new {
   display: flex;
   background-color: white;
-  height: 700px;
-  padding-left: 14%;
+  height: 90vh;
+  width: 100%;
+  padding-left: 12%;
+  padding-right: 0px;
   align-items: center;
+  position: absolute;
+  top: 30px;
 
   .text-form{
-    width: 40%;
-    margin-right: 2%;
+    width: 45%;
+    margin-right: 4%;
   }
 
   h1 {
@@ -35,7 +39,7 @@
 
   img {
     width: 68%;
-    height: 100%;
+    height: 90%;
     object-fit: cover;
     -webkit-clip-path: polygon(0px 0,100% 0,100% 100%,64px 100%);
   }

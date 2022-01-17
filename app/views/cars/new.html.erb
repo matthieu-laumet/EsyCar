@@ -20,7 +20,7 @@
 
         <div class="model-car">
           <div class="form-group select required car_model">
-            <select class="form-control select required" placeholder="Modèle de la voiture" name="car[model]" id="car_model">
+            <select class="form-control select required decorated" placeholder="Modèle de la voiture" name="car[model]" id="car_model">
               <% Car::BRANDS_MODELS.sort.each do |brand, model| %>
                 <option value="" label=<%= brand %> class="text-bold" disabled="disabled"></option>
                 <% model.each do |v| %>
@@ -42,12 +42,9 @@
         </div>
 
         <%#= f.input :address, label: 'Adresse', placeholder: 'Adresse...' %>
-
-        <div class="form-group text required car_address">
-          <textarea class="form-control text required" placeholder="Adresse..." name="car[address]" id="car_address"></textarea>
+        <div class="form-group text required car_address-form">
+          <input class="form-control text required" placeholder="Indiquez votre adresse" name="car[address]" id="car_address">
         </div>
-
-        <%#= text_field_tag :address, params[:address], class: "form-control-home", label: 'Adresse', placeholder: "Entrez une adresse..." %>
 
         <%#= f.input :price_per_day, label: 'Votre prix par jour ?', placeholder: '70€' %>
         <div class="form-group float optional car_price_per_day">
@@ -56,7 +53,7 @@
         </div>
 
         <%# <%= f.input :photo, as: :file, class:"btn btn-light" %>
-        <%= f.button :submit, 'Créer !', class: 'btn btn-danger' %>
+        <%= f.button :submit, 'Créer !', class:"btn rechercher", id:"btn-carte-new" %>
       <% end %>
     </div>
     <%= image_tag "photo_inscription.jpg" %>
