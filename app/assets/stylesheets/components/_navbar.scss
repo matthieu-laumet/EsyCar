@@ -86,3 +86,9 @@ $color-darkgray: rgb(30, 30, 30);
   }
 
 }
+
+@media(max-width: 500px) {
+  .menu-link {
+    display: none;
+  }
+}

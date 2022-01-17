@@ -4,41 +4,52 @@
       <h1>Complétez vos revenus en partageant votre voiture</h1>
       <%= simple_form_for(@car) do |f| %>
         <p class="titre-formulaire">INSCRIVEZ VOTRE VOITURE</p>
-        <%#= f.input :brand, label: 'Marque', placeholder: 'Marque de la voiture',
-                    collection: Car::BRANDS_MODELS.keys.sort,
-                    input_html: { data: { controller: 'select2' }} %>
 
-        <div class="form-group select required car_brand"><%# <label class="select required" for="car_brand">Marque <abbr title="required">*</abbr></label> %>
-          <select class="form-control select required" data-controller="select2" placeholder="Marque de la voiture" name="car[brand]" id="car_brand">
-              <%# <option value="" label=" "></option> %>
-              <% Car::BRANDS_MODELS.sort.each do |brand, model| %>
-                <option value= <%= brand %>><%= brand %></option>
+        <div class="deux-columns">
+          <%#= f.input :brand, label: 'Marque', placeholder: 'Marque de la voiture',
+                      collection: Car::BRANDS_MODELS.keys.sort,
+                      input_html: { data: { controller: 'select2' }} %>
+
+          <div class="form-group select required car_brand"><%# <label class="select required" for="car_brand">Marque <abbr title="required">*</abbr></label> %>
+            <select class="form-control select required" data-controller="select2" placeholder="Marque de la voiture" name="car[brand]" id="car_brand">
+                <%# <option value="" label=" "></option> %>
+                <% Car::BRANDS_MODELS.sort.each do |brand, model| %>
+                  <option value= <%= brand %>><%= brand %></option>
+                <% end %>
+                <%# <option value="" label="" class="text-bold"></option> %>
+              </select>
+            </div>
+
+          <div class="model-car">
+            <div class="form-group select required car_model">
+              <select class="form-control select required decorated" placeholder="Modèle de la voiture" name="car[model]" id="car_model">
+                <% Car::BRANDS_MODELS.sort.each do |brand, model| %>
+                  <option value="" label=<%= brand %> class="text-bold" disabled="disabled"></option>
+                  <% model.each do |v| %>
+                    <option value= <%= brand %>><%= v %></option>
+                  <% end %>
+                <% end %>
+              </select></div>
+          </div>
+        </div>
+
+        <div class="deux-columns">
+          <%#= f.input :year_of_production, label: 'Année', placeholder: '20XX' %>
+          <div class="form-group select optional car_year_of_production">
+            <select class="form-control select optional" data-controller="select2" placeholder="Année de la voiture" name="car[year_of_production]" id="car_year_of_production">
+              <%= years = (1999..2022).sort.reverse %>
+              <% years.each do |year| %>
+                <option value= <%= year %> > <%= year %> </option>
               <% end %>
-              <%# <option value="" label="" class="text-bold"></option> %>
+              <option value="< 1999" > < 1999 </option>
             </select>
           </div>
 
-        <div class="model-car">
-          <div class="form-group select required car_model">
-            <select class="form-control select required decorated" placeholder="Modèle de la voiture" name="car[model]" id="car_model">
-              <% Car::BRANDS_MODELS.sort.each do |brand, model| %>
-                <option value="" label=<%= brand %> class="text-bold" disabled="disabled"></option>
-                <% model.each do |v| %>
-                  <option value= <%= brand %>><%= v %></option>
-                <% end %>
-              <% end %>
-            </select></div>
-        </div>
-
-        <%#= f.input :year_of_production, label: 'Année', placeholder: '20XX' %>
-        <div class="form-group select optional car_year_of_production">
-          <select class="form-control select optional" data-controller="select2" placeholder="Année de la voiture" name="car[year_of_production]" id="car_year_of_production">
-            <%= years = (1999..2022).sort.reverse %>
-            <% years.each do |year| %>
-              <option value= <%= year %> > <%= year %> </option>
-            <% end %>
-            <option value="< 1999" > < 1999 </option>
-          </select>
+          <%#= f.input :price_per_day, label: 'Votre prix par jour ?', placeholder: '70€' %>
+          <div class="form-group float optional car_price_per_day">
+            <%#= <label class="float optional" for="car_price_per_day">Votre prix par jour ?</label> %>
+            <input class="form-control numeric float optional" placeholder="Votre prix par jour" type="number" step="any" name="car[price_per_day]" id="car_price_per_day">
+          </div>
         </div>
 
         <%#= f.input :address, label: 'Adresse', placeholder: 'Adresse...' %>
@@ -46,11 +57,6 @@
           <input class="form-control text required" placeholder="Indiquez votre adresse" name="car[address]" id="car_address">
         </div>
 
-        <%#= f.input :price_per_day, label: 'Votre prix par jour ?', placeholder: '70€' %>
-        <div class="form-group float optional car_price_per_day">
-          <%#= <label class="float optional" for="car_price_per_day">Votre prix par jour ?</label> %>
-          <input class="form-control numeric float optional" placeholder="Votre prix par jour" type="number" step="any" name="car[price_per_day]" id="car_price_per_day">
-        </div>
 
         <%# <%= f.input :photo, as: :file, class:"btn btn-light" %>
         <%= f.button :submit, 'Commencer', class:"btn rechercher", id:"btn-carte-new" %>
