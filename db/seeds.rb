@@ -41,7 +41,7 @@ address = ["12 Rue de Rivoli, Paris 1er Arrondissement, Île-de-France, France",
     brand == hasard_brand
   end
 
-  number = rand(1..30)
+  number = rand(1..29)
 
   # p select_car.keys.first.tr('"', '')
 
