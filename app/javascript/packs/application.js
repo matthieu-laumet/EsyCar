@@ -28,6 +28,7 @@ import { changeColor } from '../component/change-color';
 import { initMapbox } from '../plugins/init_mapbox';
 import { showCard } from '../plugins/show-card';
 import { initAutocomplete } from '../plugins/init_autocomplete.js';
+import { initAutocomplete2 } from '../plugins/init_autocomplete2.js';
 import { showMap } from '../plugins/display_map';
 import { datePicker } from '../plugins/date-picker';
 import { initSelect2 } from '../component/init_select2.js';
@@ -46,6 +47,7 @@ document.addEventListener('turbolinks:load', () => {
   showMap();
   datePicker();
   initAutocomplete();
+  initAutocomplete2();
   selectModel();
   selectYear();
 });
