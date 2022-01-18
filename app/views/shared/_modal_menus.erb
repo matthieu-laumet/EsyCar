@@ -1,0 +1,8 @@
+<div class="modal-container">
+  <h1 id="Nouveau-truc">Nouveau truc</h1>
+    <%= simple_form_for(car) do |f| %>
+      <%= f.input :brand, label: 'Marque', placeholder: 'Marque de la voiture' %>
+      <%= f.button :submit, 'Créer !', class: 'btn btn-danger' %>
+    <% end %>
+    <span class="modal-close" id="modal-close-new"><i class="fas fa-times"></i></span>
+</div>

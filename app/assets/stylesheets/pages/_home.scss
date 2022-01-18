@@ -11,6 +11,29 @@ $color-orange-dark:#f7981d;
   }
 }
 
+.nav-item-mobile {
+  margin-left: 7%;
+  margin-right: 7%;
+}
+
+.nav-links-mobiles {
+  background-color: rgb(238, 238, 238);
+  border-radius: 6px;
+  padding: 10px 25px;
+
+  .dropdown-item {
+    border-bottom: 1px solid rgb(190, 190, 190);
+    // margin-bottom: 20px;
+    line-height: 32px;
+    padding-left: 0;
+  }
+
+  #last-link {
+    border-bottom: none;
+    line-height: 28px;
+  }
+}
+
 .container-home {
   min-height: 41vh;
   margin-right: 10%;
