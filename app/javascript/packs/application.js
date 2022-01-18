@@ -48,7 +48,10 @@ document.addEventListener('turbolinks:load', () => {
   datePicker();
   initAutocomplete();
   initAutocomplete2();
-  selectModel();
+  const allModels = document.querySelectorAll('#car_model option')
+  if (allModels.length !== 0) {
+    selectModel();
+  };
   selectYear();
 });
 
