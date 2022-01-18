@@ -1,5 +1,6 @@
 $color-gray: #6e6e6e;
 $color-darkgray: rgb(30, 30, 30);
+$color-orange-dark:#f7981d;
 
 .navbar-lewagon {
   justify-content: space-between;
@@ -84,7 +85,33 @@ $color-darkgray: rgb(30, 30, 30);
     display: flex;
     align-items: center;
   }
+}
 
+.profil-user {
+  display: flex;
+  padding-left: 2%;
+  align-items: flex-end;
+  margin-bottom: 20px;
+  // padding-bottom: 15px;
+  // border-bottom: 1px solid $color-gray;
+}
+
+.profil-text {
+  text-align: left;
+  margin-left: 15px;
+
+  p {
+    margin-bottom: 0;
+    font-weight: 700;
+    font-size: 16px;
+    color: $color-orange-dark;
+  }
+  a {
+    padding: 0;
+    font-weight: 300;
+    font-size: 14px;
+    color: $color-gray;
+  }
 }
 
 @media(max-width: 500px) {
