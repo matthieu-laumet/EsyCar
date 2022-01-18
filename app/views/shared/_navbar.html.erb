@@ -20,6 +20,7 @@
   <div class="modal-bg">
     <div class="modal-container">
         <span class="modal-close" id="modal-close-new"></span>
+        <%#= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
         <% if user_signed_in? %>
           <div class="links-mobiles">
             <%= link_to "Accueil", root_path, class: "nav-item mobile-only" %>
