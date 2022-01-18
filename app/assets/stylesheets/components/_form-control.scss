@@ -48,4 +48,12 @@ $color-orange-dark:#f7981d;
   .new_car {
     width: 100%;
   }
+  .form-control {
+    &:hover {
+      background-color: white;
+    }
+    &:focus {
+      background-color: white;
+    }
+  }
 }

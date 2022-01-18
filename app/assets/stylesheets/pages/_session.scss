@@ -3,7 +3,7 @@
   min-width: 420px;
   display: flex;
   align-items: center;
-  height: 80vh;
+  min-height: 79vh;
   margin: 20px auto;
   background-color: white;
   box-shadow: 0 0px 6px rgba($color: #585858, $alpha: .1);
@@ -22,6 +22,7 @@
       color: rgb(130, 130, 130);
     }
   }
+
   .img-backgound {
     background-image: asset-url("photo.png");
     background-size: cover;
@@ -44,4 +45,22 @@
 #container-forgot-password {
   width: 40%;
   height: 400px;
+}
+
+@media(max-width: 500px) {
+    .img-backgound {
+    display: none;
+  }
+
+  .container-login {
+    width: 90%;
+    margin: 0px auto;
+    min-height: 79vh;
+
+    .log-form {
+      width: 90%;
+      margin-left: 10%;
+      margin-right: 10%;
+    }
+  }
 }
