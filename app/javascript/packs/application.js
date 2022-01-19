@@ -32,6 +32,8 @@ import { initAutocomplete2 } from '../plugins/init_autocomplete2.js';
 import { showMap } from '../plugins/display_map';
 import { datePicker } from '../plugins/date-picker';
 import { initSelect2 } from '../component/init_select2.js';
+import { initUpdateNavbarOnScroll } from '../component/navbar.js';
+import { loadDynamicBannerText } from '../component/banner.js';
 import { selectModel } from '../component/select_model_from_brand.js';
 import { selectYear } from '../component/select_year_car.js';
 
@@ -42,6 +44,10 @@ document.addEventListener('turbolinks:load', () => {
   initSelect2();
   actionModal();
   // changeColor();
+  // const mapElement = document.querySelectorAll('ap-input-icon');
+  // if (mapElement.length !== 0) {
+  //   initMapbox();
+  // };
   initMapbox();
   showCard();
   showMap();
@@ -53,6 +59,8 @@ document.addEventListener('turbolinks:load', () => {
     selectModel();
   };
   selectYear();
+  initUpdateNavbarOnScroll();
+  // loadDynamicBannerText();
 });
 
 import "controllers"

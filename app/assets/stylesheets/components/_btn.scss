@@ -162,8 +162,9 @@ $color-brown:#3b270b;
 
 @media(max-width: 500px) {
   #btn-carte {
-    width: 100%;
+    width: auto;
     margin: 0;
+    margin-right: 15px !important;
   }
 
   #btn-banner {
@@ -176,5 +177,28 @@ $color-brown:#3b270b;
 
   #clic-avatar {
     display: none;
+  }
+
+  #btn-carte-new {
+    height: 50px;
+  }
+
+  .voir-carte, .voir-liste {
+    width: 80px;
+  }
+
+  .voirlacarte-inline {
+    display: flex;
+    margin-bottom: 20px;
+    height: 43px;
+  }
+
+  .voir-carte {
+    margin-right: 10px;
+  }
+
+  .trait {
+      margin-bottom: 0;
+      padding-top: 15px;
   }
 }
