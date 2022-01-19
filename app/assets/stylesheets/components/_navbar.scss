@@ -122,7 +122,12 @@ $color-orange-dark:#f7981d;
   .navbar-lewagon {
     background-image: asset-url("banner-car-mobile2.png");
     background-size: cover;
-    background-position-y: -140px;
+    background-position-y: -150px;
+  }
+
+  .navbar-lewagon-white {
+    border-bottom: 1px solid white !important;
+    box-shadow: 0 6px 6px rgba($color: #585858, $alpha: .1) !important;
   }
 
   .navbar {
