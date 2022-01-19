@@ -131,7 +131,7 @@ $color-darkgray: rgb(30, 30, 30);
     // height: 900px;
 
     .card {
-      height: 215px;
+      height: 230px;
     }
 
     .card-photo {
@@ -139,6 +139,18 @@ $color-darkgray: rgb(30, 30, 30);
     }
 
     .card-body {
+      .text {
+        padding-top: 8px;
+      }
+
+      .car-model {
+        font-size: 20px;
+      }
+
+      .card-title {
+        font-size: 22px;
+      }
+
       .price {
         padding-top: 5px;
         padding-bottom: 5px;

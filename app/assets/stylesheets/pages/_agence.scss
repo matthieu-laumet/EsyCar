@@ -1,5 +1,9 @@
 $color-dark-default: #505050;
 $color-darker-default: #252525;
+$color-default: #f79e1e;
+$color-orange: #f79e1e;
+$color-orange-dark:#f7981d;
+$color-orange-very-dark:#db8718;
 
 .container-cars-index {
   min-height: 73vh;
@@ -115,6 +119,9 @@ $color-darker-default: #252525;
 .mapboxgl-popup-content {
   text-align: center;
   font-family: 'Lato', sans-serif;
+  border-radius: 8px !important;
+  width: 275px;
+
   p, h4, h3 {
     margin-bottom: 0;
   }
@@ -123,17 +130,37 @@ $color-darker-default: #252525;
     font-size: 14px;
   }
   h5 {
-    opacity: .5;
+    // opacity: .5;
+    color: $color-orange-very-dark;
   }
 
   .fas {
     font-size: 70%;
   }
-
 }
 
 @media(max-width: 500px) {
  .container-cars-index {
    min-height: 54vh;
+   margin: 2% 6%;
+  }
+
+  .mapboxgl-popup-content {
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    border-radius: 6px;
+
+    p, h4, h3 {
+      margin-bottom: 0;
+      font-size: 18px;
+    }
+
+    h5 {
+      font-size: 16px;
+    }
+
+    h3 {
+      margin-bottom: 10px;
     }
   }
+}
