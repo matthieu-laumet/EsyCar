@@ -90,27 +90,35 @@ $color-brown:#3b270b;
 @media(max-width: 500px) {
   .banner-home {
     height: 88vh;
-    background-image: asset-url("banner-mobile.png");
+    background-image: asset-url("banner-car-mobile2.png");
     object-fit: cover;
-    background-position-y: -120px;
+    background-position-y: -200px;
     // position: absolute;
     // top: 63px;
 
     .title {
-      font-size: 34px;
+      font-size: 36px;
+      color: white;
+      width: 60%;
     }
+
     h2 {
       font-size: 36px;
+      margin-bottom: 15px;
     }
+
     p {
-      font-size: 22px;
+      font-size: 16px;
       line-height: 26px;
+      color: white;
+      opacity: .45;
+      margin-bottom: 350px;
     }
 
     .container-banner-home {
-      padding-left: 5%;
-      padding-right: 5%;
-      padding-top: 5%;
+      padding-left: 10%;
+      padding-right: 10%;
+      padding-top: 13%;
       width: 100%;
     }
 
