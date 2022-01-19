@@ -80,6 +80,9 @@
     // position: relative;
     // top: 2925px;
     flex-direction: column;
+    background-image: asset-url("banner-car-mobile2.png");
+    background-size: cover;
+    background-position-y: -29px;
 
     a {
       font-size: 18px;
