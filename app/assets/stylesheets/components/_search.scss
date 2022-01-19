@@ -48,9 +48,9 @@ $color-orange-dark:#f7981d;
   }
 
   #address {
-    padding-left: 33px;
-    margin-left: -20px;
-    margin-right: 20px;
+    // padding-left: 33px;
+    // margin-left: -20px;
+    // margin-right: 20px;
     color: $color-orange;
   }
 
@@ -134,16 +134,18 @@ input:-webkit-autofill,
     .search-inline {
       #address {
         height: 60px;
+        margin-right: 0;
       }
     }
 
     #mobile-search-index {
-      width: 106%;
+      width: 100%;
     }
 
     #address {
       height: 70px;
-      width: 105%;
+      width: 100%;
+      padding-left: 20px;
     }
   }
 

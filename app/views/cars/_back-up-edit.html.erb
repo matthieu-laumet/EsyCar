@@ -1,0 +1,17 @@
+<div class="container-new">
+  <div class="formulaire-new">
+    <div class="text-form">
+      <h1>Complétez vos revenus en partageant votre voiture</h1>
+      <%= simple_form_for(@car) do |f| %>
+        <%= f.input :brand, label: 'Marque', placeholder: 'Marque de la voiture' %>
+        <%= f.input :model, label: 'Modèle', placeholder: 'Modèle de la voiture' %>
+        <%= f.input :year_of_production, label: 'Année', placeholder: 'Année...' %>
+        <%= f.input :address, label: 'address', placeholder: 'Adresse...' %>
+        <%= f.input :price_per_day, label: 'Votre prix par jour ?', placeholder: '.... €' %>
+        <%# <%= f.input :photo, as: :file, class:"btn btn-light" %>
+        <%= f.button :submit, 'Modifier !', class: 'btn btn-danger' %>
+      <% end %>
+    </div>
+    <%= image_tag "photo_inscription.jpg" %>
+  </div>
+</div>
