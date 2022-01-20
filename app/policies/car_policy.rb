@@ -14,6 +14,10 @@ class CarPolicy < ApplicationPolicy
     true
   end
 
+  def my_location?
+    Car.all
+  end
+
   def show?
     true
   end

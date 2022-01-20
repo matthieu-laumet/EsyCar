@@ -122,7 +122,7 @@ $color-orange-dark:#f7981d;
   .navbar-lewagon {
     background-image: asset-url("banner-car-mobile2.png");
     background-size: cover;
-    background-position-y: -150px;
+    background-position-y: -196px;
   }
 
   .navbar-lewagon-white {
@@ -134,6 +134,30 @@ $color-orange-dark:#f7981d;
     background-color: transparent;
     border-bottom: none;
     box-shadow: none;
+  }
+
+  .picto-menus {
+    width: 25px;
+    height: 25px;
+    opacity: .35;
+    margin-right: 20px;
+  }
+
+  #smaller {
+    width: 22px;
+    height: 22px;
+  }
+
+  #smaller2 {
+    width: 23px;
+    height: 23px;
+    margin-right: 15px;
+  }
+
+  .links-in-line {
+    border-bottom: 1px solid rgb(190, 190, 190);
+    display: flex;
+    align-items: center;
   }
 
 }

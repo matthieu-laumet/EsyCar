@@ -46,10 +46,26 @@
             </div>
           </div>
           <div class="nav-links-mobiles">
-            <%= link_to "Accueil", root_path, class: "dropdown-item" %>
-            <%= link_to "Liste des véhicules", cars_path, class: "dropdown-item" %>
-            <%= link_to "Louer ma voiture", new_car_path, class: "dropdown-item" %>
-            <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "dropdown-item", id:"last-link" %>
+            <div class="links-in-line">
+              <%= link_to "Accueil", root_path, class: "dropdown-item" %>
+              <%= image_tag "home.svg", class: "picto-menus", id:"smaller2" %>
+            </div>
+            <div class="links-in-line">
+              <%= link_to "Rechercher une voiture", cars_path, class: "dropdown-item" %>
+              <svg xmlns="http://www.w3.org/2000/svg" class="picto-menus" id="smaller" viewBox="0 0 19 19"><path fill="#191919" d="M17 7A5 5 0 107 7a5 5 0 0010 0zm-9.192 5.607l-6.1 6.1-1.415-1.414 6.1-6.1A7 7 0 0112 0a7 7 0 11-4.192 12.606z"></path></svg>
+            </div>
+            <div class="links-in-line">
+              <%= link_to "Louer ma voiture", new_car_path, class: "dropdown-item" %>
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="picto-menus"><path d="M20.382 8.539C19.539 5.819 17.86 4 15.5 4h-7C6.14 4 4.46 5.82 3.618 8.539a1.75 1.75 0 10-.59 3.447C3.01 12.32 3 12.657 3 13v6a1 1 0 001 1h2a1 1 0 001-1v-1h10v1a1 1 0 001 1h2a1 1 0 001-1v-6c0-.343-.01-.681-.028-1.014a1.75 1.75 0 10-.59-3.447zM5.5 11c0-1 0-5 3.5-5h6c3.5 0 3.5 4 3.5 5h-13zm12 5a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm-11 0a1.5 1.5 0 110-3 1.5 1.5 0 010 3z"></path></svg>
+            </div>
+            <div class="links-in-line">
+              <%= link_to "Voir mes locations",  my_location_cars_path, class: "dropdown-item" %>
+              <%= image_tag "locations.svg", class: "picto-menus", id:"picto-menus" %>
+            </div>
+            <div class="links-in-line" id="last-link">
+              <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="picto-menus"><path clip-rule="evenodd" d="M14.08 15.59L16.67 13H7v-2h9.67l-2.59-2.59L15.5 7l5 5-5 5zM19 3a2 2 0 012 2v4.67l-2-2V5H5v14h14v-2.67l2-2V19a2 2 0 01-2 2H5a2 2 0 01-2-2V5c0-1.11.89-2 2-2z" fill-rule="evenodd"></path></svg>
+            </div>
             <%# <li class="nav-item dropdown" id="clic-avatar"> %>
               <%# <div class="avatar-display"> %>
                 <%#= current_user.first_name %>
