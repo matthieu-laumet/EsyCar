@@ -59,12 +59,17 @@
         </div>
 
 
-        <%#= f.input :photo, as: :file, class:"btn btn-light" %>
+        <%= f.input :photo, as: :file, class:"btn btn-light" %>
 
         <%= f.button :submit, 'Commencer', class:"btn rechercher", id:"btn-carte-new" %>
       <% end %>
     </div>
-    <%= image_tag "photo_inscription.jpg" %>
+    <% if @car.photo.attached? %>
+      <%= cl_image_tag("#{@car.photo.key}", crop: :fill, class: "card-photo") %>
+    <% else %>
+      <%= image_tag "photo_inscription.jpg", crop: :fill, class: "card-photo" %>
+    <% end %>
+
   </div>
   <div class="infos-new-car">
     <div class="info-text">

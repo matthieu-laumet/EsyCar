@@ -1,7 +1,12 @@
 class CarPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      user.admin ? scope.all : scope.where.not(user: user)
+      # user.nil? scope.all
+      if user.nil? || user.admin
+        scope.all
+      else
+        scope.where.not(user: user)
+      end
     end
   end
 
@@ -14,10 +19,10 @@ class CarPolicy < ApplicationPolicy
   end
 
   def update?
-    record.user == user || user.admin
+    record.user == user || user.admin unless user.nil?
   end
 
   def destroy?
-    record.user == user || user.admin
+    record.user == user || user.admin unless user.nil?
   end
 end

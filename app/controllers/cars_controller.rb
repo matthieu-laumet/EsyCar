@@ -1,5 +1,6 @@
 class CarsController < ApplicationController
   before_action :set_car, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authenticate_user!, only: [ :index, :show ]
 
   def index
     # raise
@@ -72,7 +73,7 @@ class CarsController < ApplicationController
   end
 
   def car_params
-    params.require(:car).permit(:brand, :model, :year_of_production, :address, :price_per_day, photos: [])
+    params.require(:car).permit(:brand, :model, :year_of_production, :address, :price_per_day, :photo)
   end
 
 end

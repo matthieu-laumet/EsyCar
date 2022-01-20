@@ -4,12 +4,15 @@ User.destroy_all
 Car.destroy_all
 
   User.create!(email: 'julia@gmail.com', password: 'azerty', first_name: 'Julia', last_name: 'Duwagon', admin: true)
+  User.create!(email: 'matt@gmail.com', password: 'azerty', first_name: 'Matthieu', last_name: 'Laumet', admin: false)
+
 30.times do
   User.create!(email: Faker::Internet.email, password: Faker::Alphanumeric.alphanumeric(number: 10), first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
+  # User.last.email = "#{User.last.first_name}.#{User.last.last_name}@gmail.com"
   print "#"
 end
-puts 'users created'
 
+puts 'Users created'
 
 address = ["12 Rue de Rivoli, Paris 1er Arrondissement, Île-de-France, France", "93 Rue des Lavandières, Pessac, Nouvelle-Aquitaine, France", "12 Rue André Lamande, Bordeaux, Nouvelle-Aquitaine, France", "74 Cours Victor Hugo, Bordeaux, Nouvelle-Aquitaine, France", "36 Rue Victor Hugo, Coudekerque-Branche, Hauts-de-France, France", "35 Rue des Amandiers, Martigues, Provence-Alpes-Côte d'Azur, France", "73 Rue René Descartes, Strasbourg, Grand-Est, France",
   "20 Rue des Rossignols, Mérignac, Nouvelle-Aquitaine, France", "20 Rue des Rossignols, Villeneuve-sur-Lot, Nouvelle-Aquitaine, France", "16 Allée Beauséjour, Brétigny-sur-Orge, Île-de-France, France", "Mairie de Tournefeuille, Tournefeuille, Occitanie, France", "29 Rue Georges Lenotre, Rambouillet, Île-de-France, France", "79 Avenue d'Armorique, Plaisir, Île-de-France, France", "7 Avenue d'Écully, Lyon 9e Arrondissement, Auvergne-Rhône-Alpes, France",
@@ -21,15 +24,15 @@ address = ["12 Rue de Rivoli, Paris 1er Arrondissement, Île-de-France, France",
   x = 0
 
 41.times do
-  toyota = %w(Auris Avensis Aygo C-HR Camry Corolla Lans Cruiser Prius Proace Rav4 Yaris).sample
-  ford = %w(Fiesta Focus Kuga Mustang Puma Ranger Transit).sample
+  toyota = %w(Auris Avensis Aygo C-HR Camry Corolla Prius Rav4 Yaris).sample
+  ford = %w(Fiesta Focus Kuga Mustang Ranger Transit).sample
   renault = %w(Arkana Captur Clio Espace Kadjar Kangoo Koleos Megane Twingo Zoe).sample
   peugeot = %w(108 2008 208 3008 301 308 5008 508 Partner).sample
   audi = %w(A1 A3 A4 A5 E-tron Q3 Q5 Q7 R8).sample
-  volkswagen = %w(Arteon Golf Polo T-cross T-roc Touareg Touran).sample
-  dacia = %w(Duster Jogger Logan Sandero).sample
+  volkswagen = %w(Arteon Golf Polo T-Cross T-Roc Touareg Touran).sample
+  dacia = %w(Duster Logan Sandero).sample
   nissan = %w(Ariya Juke Micra Qashqai X-Trail).sample
-  citroen = %w(Ami Berlingo C1 C3 c4 Jumper).sample
+  citroen = %w(Ami Berlingo C1 C3 C4 Jumper).sample
   opel = %w(Astra Corsa Insignia Mokka).sample
   seat = %w(Arona Ateca Ibiza Leon Tarraco).sample
 
@@ -37,17 +40,41 @@ address = ["12 Rue de Rivoli, Paris 1er Arrondissement, Île-de-France, France",
                   "dacia" => dacia, "nissan" => nissan, "citroen" => citroen, "opel" => opel, "seat" => seat }
   hasard_brand = ["toyota", "ford", "renault", "peugeot", "audi", "volkswagen", "dacia", "nissan", "citroen", "opel", "seat"].sample
 
+  # img_opel_cars = {"Astra" => File.open(Rails.root.join('public', 'images', 'pic1.jpg'))}
+
   select_car = association.select do |brand, model|
     brand == hasard_brand
   end
 
-  number = rand(1..29)
+  number = rand(1..30)
 
-  # p select_car.keys.first.tr('"', '')
+  new_car = Car.create!(
+    brand: select_car.keys.first.tr('"', '').capitalize,
+    model: select_car.values.first.tr('"', ''),
+    year_of_production: Faker::Vehicle.year,
+    price_per_day: Faker::Number.number(digits: 2),
+    address: address[x],
+    user_id: User.find(number).id)
 
-  Car.create!(brand: select_car.keys.first.tr('"', '').capitalize, model: select_car.values.first.tr('"', ''), year_of_production: Faker::Vehicle.year, price_per_day: Faker::Number.number(digits: 2), address: address[x], user_id: User.find(number).id)
+  new_car.photo.attach(io: File.open(Rails.root.join("app/assets/images/cars/#{select_car.keys.first.tr('"', '')}_#{select_car.values.first.tr('"', '')}.jpg")),
+                  filename: "#{select_car.keys.first.tr('"', '')}_#{select_car.values.first.tr('"', '')}.jpg")
+
   print "#"
   x += 1
 end
 
 puts 'cars created'
+
+
+# new_car = Car.create!(
+#     brand: "TOTO",
+#     model: "Icar",
+#     year_of_production: 2032,
+#     price_per_day: 32,
+#     address: "35 Rue Tournefort, Paris 5e Arrondissement, Île-de-France, France",
+#     user_id: 3)
+
+#   new_car.photo.attach(io: File.open(Rails.root.join('app/assets/images/cars/Opel/Opel_Astra.jpg')),
+#                   filename: 'Opel_Astra.jpg')
+
+# puts 'cars created'
