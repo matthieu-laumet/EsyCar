@@ -1,14 +1,15 @@
 require 'faker'
 
 User.destroy_all
-Car.destroy_all
+# Car.destroy_all
 
   User.create!(email: 'julia@gmail.com', password: 'azerty', first_name: 'Julia', last_name: 'Duwagon', admin: true)
   User.create!(email: 'matt@gmail.com', password: 'azerty', first_name: 'Matthieu', last_name: 'Laumet', admin: false)
 
 30.times do
-  User.create!(email: Faker::Internet.email, password: Faker::Alphanumeric.alphanumeric(number: 10), first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
-  # User.last.email = "#{User.last.first_name}.#{User.last.last_name}@gmail.com"
+  new_user = User.new(email: Faker::Internet.email, password: Faker::Alphanumeric.alphanumeric(number: 10), first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
+  new_user.email = "#{new_user.first_name}.#{new_user.last_name}@gmail.com"
+  new_user.save!
   print "#"
 end
 
@@ -40,8 +41,6 @@ address = ["12 Rue de Rivoli, Paris 1er Arrondissement, Île-de-France, France",
                   "dacia" => dacia, "nissan" => nissan, "citroen" => citroen, "opel" => opel, "seat" => seat }
   hasard_brand = ["toyota", "ford", "renault", "peugeot", "audi", "volkswagen", "dacia", "nissan", "citroen", "opel", "seat"].sample
 
-  # img_opel_cars = {"Astra" => File.open(Rails.root.join('public', 'images', 'pic1.jpg'))}
-
   select_car = association.select do |brand, model|
     brand == hasard_brand
   end
@@ -64,17 +63,3 @@ address = ["12 Rue de Rivoli, Paris 1er Arrondissement, Île-de-France, France",
 end
 
 puts 'cars created'
-
-
-# new_car = Car.create!(
-#     brand: "TOTO",
-#     model: "Icar",
-#     year_of_production: 2032,
-#     price_per_day: 32,
-#     address: "35 Rue Tournefort, Paris 5e Arrondissement, Île-de-France, France",
-#     user_id: 3)
-
-#   new_car.photo.attach(io: File.open(Rails.root.join('app/assets/images/cars/Opel/Opel_Astra.jpg')),
-#                   filename: 'Opel_Astra.jpg')
-
-# puts 'cars created'
