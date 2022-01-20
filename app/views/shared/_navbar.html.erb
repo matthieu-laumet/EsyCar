@@ -16,7 +16,11 @@
   <% if user_signed_in? %>
     <button class="navbar-toggler modal-btn" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <div class="mobile-menu">
-        <%= image_tag "avatar.svg", class: "avatar" %>
+        <% if current_user.photo.attached? %>
+          <%= cl_image_tag("#{current_user.photo.key}", class: "avatar") %>
+        <% else %>
+          <%= image_tag "avatar.svg", class: "avatar" %>
+        <% end %>
         <span class="navbar-toggler-icon ml-2"></span></div>
     </button>
   <% else %>
@@ -31,7 +35,11 @@
         <%#= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
         <% if user_signed_in? %>
           <div class="profil-user">
-            <%= image_tag "avatar.svg", class: "avatar-large" %>
+            <% if current_user.photo.attached? %>
+              <%= cl_image_tag("#{current_user.photo.key}", class: "avatar-large") %>
+            <% else %>
+              <%= image_tag "avatar.svg", class: "avatar-large" %>
+            <% end %>
             <div class="profil-text">
               <p><%= current_user.first_name %>&nbsp;<%= current_user.last_name %></p>
               <%= link_to "Modifier mon compte", edit_user_registration_path, class: "dropdown-item" %>
