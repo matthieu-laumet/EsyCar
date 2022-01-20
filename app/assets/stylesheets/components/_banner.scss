@@ -89,10 +89,10 @@ $color-brown:#3b270b;
 
 @media(max-width: 500px) {
   .banner-home {
-    height: 85vh;
+    height: 800px;
     background-image: asset-url("banner-car-mobile2.png");
     object-fit: cover;
-    background-position-y: -235px;
+    background-position-y: -225px;
     // position: absolute;
     // top: 63px;
 
@@ -111,7 +111,7 @@ $color-brown:#3b270b;
       line-height: 26px;
       color: white;
       opacity: .6;
-      margin-bottom: 300px;
+      margin-bottom: 340px;
     }
 
     .container-banner-home {
