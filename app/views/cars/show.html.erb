@@ -18,7 +18,11 @@
 <div class="container-cars-show">
   <div class="left-show">
     <div class="main-card-show">
-      <%= image_tag 'card-en-construction-01.png', crop: :fill, class: "card-photo-show" %>
+      <% if @car.photo.attached? %>
+        <%= cl_image_tag("#{@car.photo.key}", crop: :fill, class: "card-photo-show") %>
+      <% else %>
+        <%= image_tag 'card-en-construction-01.png', crop: :fill, class: "card-photo-show" %>
+      <% end %>
       <div class="card-show-text">
         <div class="text-car-in-line">
           <h3 class="card-title-show m-0"><%= @car.brand %></h3>
