@@ -34,7 +34,7 @@
             <%= image_tag "avatar.svg", class: "avatar-large" %>
             <div class="profil-text">
               <p><%= current_user.first_name %>&nbsp;<%= current_user.last_name %></p>
-              <%= link_to "Modifier mon compte", users_profile_path, class: "dropdown-item" %>
+              <%= link_to "Modifier mon compte", edit_user_registration_path, class: "dropdown-item" %>
             </div>
           </div>
           <div class="nav-links-mobiles">
