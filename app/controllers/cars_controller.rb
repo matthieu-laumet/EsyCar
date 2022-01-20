@@ -20,6 +20,11 @@ class CarsController < ApplicationController
     end
   end
 
+  def my_location
+    @cars = Car.where(user: current_user)
+    authorize @cars
+  end
+
   def show
     @booking = Booking.new
 
@@ -62,7 +67,11 @@ class CarsController < ApplicationController
 
   def destroy
     @car.destroy
-    redirect_to cars_path, notice: 'Votre voiture a bien été suprimée'
+    if current_user.admin
+      redirect_to cars_path, notice: 'Votre voiture a bien été suprimée'
+    else
+      redirect_to my_location_cars_path, notice: 'Votre voiture a bien été suprimée'
+    end
   end
 
   private

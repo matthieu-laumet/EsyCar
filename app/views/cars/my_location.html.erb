@@ -1,32 +1,10 @@
-<div class="banner-car">
-  <div class="container-banner-car">
-    <%= form_tag cars_path, method: :get, class:"search" do %>
-      <div class="search-address">
-        <%# <label for="address" class="search-label">Lieu de départ</label> %>
-        <div class="search-inline" id="mobile-search-index">
-          <%# <i class="fas fa-search white-color"></i> %>
-          <%= text_field_tag :address, params[:address], class: "form-control-home", placeholder: "Entrez une ville..." %>
-        </div>
-      </div>
-      <%= submit_tag "Rechercher", class: "btn rechercher", id:"btn-carte-new"%>
+<div class="container-cars-location">
+  <h3>Mes locations</h3>
+    <% if @cars.empty? %>
+      <p class="text-left message-no-card">Oupss... Vous n'avez pas encore de locations...</p>
+      <p class="text-left ajout-location"><strong>Souhaitez-vous en créer une ?</strong></p>
+      <%= link_to "Ajouter une location", new_car_path, class:"btn rechercher", id:"btn-carte-new-location" %>
     <% end %>
-  </div>
-</div>
-
-<div class="container-cars-index">
-  <div class="voirlacarte-inline">
-    <div class="btn rechercher" id="btn-carte">
-      <p class="voir-carte"><i class="fas fa-map-marked-alt mr-2"></i>Carte</p>
-      <p class="voir-liste hidden"><i class="fas fa-list-ul mr-2"></i>Liste</p>
-    </div>
-    <p class="trait"> <%= pluralize @cars.size, "Résultats" %></p>
-  </div>
-  <div class="d-none map-js">
-    <div id="map"
-      data-markers="<%= @markers.to_json %>"
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-    </div>
-  </div>
   <div class="cards">
     <% @cars.each do |car| %>
       <%= button_to(car_path(car), method: :get, class: "btn-stripped" ) do %>
@@ -62,7 +40,7 @@
               <% end %>
             <% end %>
             <% if policy(car).destroy? %>
-              <%= link_to(car_path(car), method: :delete, remote: true, data: { confirm: "Souhaitez-vous supprimer cette voiture ?" } ) do %>
+              <%= link_to(car_path(car), method: :delete,  data: { confirm: "Souhaitez-vous supprimer cette voiture ?" } ) do %>
                 <i class="fas fa-trash-alt ml-1"></i>
               <% end %>
             <% end %>
@@ -71,7 +49,5 @@
       <% end %>
     <% end %>
   </div>
-  <% if @cars.empty? %>
-    <p class="text-left message-no-card">Vous n'avez pas de véhicules qui correspondent à votre recherche...</p>
-  <% end %>
+  <%= link_to "Ajouter une location", new_car_path, class:"btn rechercher mb-4", id:"btn-carte-new-location" %>
 </div>

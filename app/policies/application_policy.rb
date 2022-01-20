@@ -12,6 +12,10 @@ class ApplicationPolicy
     false
   end
 
+  def my_location?
+    false
+  end
+
   def show?
     false
   end
