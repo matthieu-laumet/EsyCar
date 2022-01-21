@@ -3,14 +3,14 @@
     <h1 class='title'>Louez votre voiture</h1>
     <h2>En quelques clics</h2>
       <div class="paragraphe">
-        <p>Remplissez les champs, <br> réservez, <strong>partez !</strong></p>
+        <p>Remplissez les champs, réservez, <strong>partez !</strong></p>
       </div>
-        <%= form_tag cars_path, method: :get, class:"search" do %>
-      <div class="search-address">
+    <%= form_tag cars_path, method: :get, class:"search search-home" do %>
+      <div class="search-address search-address-home">
         <%# <label for="address" class="search-label">Lieu de départ</label> %>
         <div class="search-inline">
           <%# <i class="fas fa-search white-color"></i> %>
-          <%= text_field_tag :address, params[:address], class: "form-control-home", placeholder: "Entrez une adresse..." %>
+          <%= text_field_tag :address, params[:address], class: "form-control-home barre-de-recherche-home", placeholder: "Entrez une adresse..." %>
         </div>
       </div>
       <%= submit_tag "Rechercher", class: "btn rechercher", id:"btn-banner" %>
