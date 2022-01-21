@@ -12,6 +12,13 @@ $color-darkgray: rgba(30, 30, 30, .4);
   }
 }
 
+.container-cars-location {
+  min-height: 86.5vh;
+  padding-top: 2%;
+  padding-left: 4%;
+  padding-right: 4%;
+}
+
 @media(max-width: 500px) {
  .container-cars-index {
    min-height: 22vh;
