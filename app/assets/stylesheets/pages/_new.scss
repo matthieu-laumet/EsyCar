@@ -4,9 +4,26 @@ $color-orange-dark:#f7981d;
 $color-orange-very-dark:#db8718;
 
 .container-new {
-  min-height: 86vh;
+  min-height: 90vh;
   top: 30px;
   position: relative;
+}
+
+.photo-form {
+  width: 70%;
+
+  img {
+    width: 100%;
+    -webkit-clip-path: polygon(0px 0,100% 0,100% 100%,64px 100%);
+    height: 705px;
+    object-fit: cover;
+  }
+}
+
+.photo-form-edit {
+   img {
+    height: 805px !important;
+  }
 }
 
 .container-edit {
@@ -17,6 +34,7 @@ $color-orange-very-dark:#db8718;
 
 .infos-new-car {
   display: grid;
+  height: 100px;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 18px;
   z-index: 10;
@@ -56,22 +74,27 @@ $color-orange-very-dark:#db8718;
   font-weight: bold;
 }
 
+.formulaire-new-edit {
+  height: 805px !important;
+}
+
 .formulaire-new {
   display: flex;
+  flex-direction: row-reverse;
   background-color: white;
-  height: 95vh;
+  height: 705px;
   width: 100%;
   padding-left: 12%;
   padding-right: 0px;
   align-items: center;
-  margin-top: -32px;
-  margin-bottom: -32px;
+  margin-top: -33px;
+  // margin-bottom: -32px;
   // position: absolute;
   // top: 30px;
 
   .text-form{
-    width: 45%;
-    margin-right: 4%;
+    width: 40%;
+    margin-right: 10%;
   }
 
   h1 {
@@ -82,18 +105,19 @@ $color-orange-very-dark:#db8718;
     margin-bottom: 30px;
   }
 
-  img {
-    width: 68%;
-    height: 90%;
-    object-fit: cover;
-    z-index: 1;
-    -webkit-clip-path: polygon(0px 0,100% 0,100% 100%,64px 100%);
-  }
+  // img {
+  //   width: 68%;
+  //   height: 90%;
+  //   object-fit: cover;
+  //   z-index: 1;
+  //   -webkit-clip-path: polygon(0px 0,100% 0,100% 100%,64px 100%);
+  // }
 }
 
 @media(max-width: 500px) {
   .container-new {
     margin-bottom: 45px;
+    min-height: 76vh;
   }
 
   .container-edit {
@@ -104,6 +128,7 @@ $color-orange-very-dark:#db8718;
     padding: 26px;
     grid-template-columns: 1fr 1fr;
     grid-gap: 25px;
+    height: 300px;
   }
 
   .formulaire-new {
@@ -111,7 +136,7 @@ $color-orange-very-dark:#db8718;
     padding-left: 8%;
     padding-right: 8%;
     margin-bottom: 18px;
-    height: 85vh;
+    height: 76vh;
 
     .photo-form {
       width: 120%;
