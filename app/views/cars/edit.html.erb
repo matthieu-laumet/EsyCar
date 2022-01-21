@@ -1,37 +1,65 @@
-<div class="container-new">
+<div class="container-edit">
   <div class="formulaire-new">
+    <div class="photo-form">
+      <% if @car.photo.attached? %>
+        <%= cl_image_tag("#{@car.photo.key}", crop: :fill, class: "card-photo") %>
+      <% else %>
+        <%= image_tag "photo_inscription.jpg", crop: :fill, class: "card-photo" %>
+      <% end %>
+    </div>
     <div class="text-form">
       <h1>Complétez vos revenus en partageant votre voiture</h1>
       <%= simple_form_for(@car) do |f| %>
-        <%= f.input :brand, label: 'Marque', placeholder: 'Marque de la voiture',
-                      collection: Car::BRANDS_MODELS.keys.sort %>
-        <%#= f.input :model, label: 'Modèle', placeholder: 'Modèle de la voiture' %>
-        <div class="form-group select required car_model">
-          <select class="form-control select required decorated" placeholder="Modèle de la voiture" name="car[model]" id="car_model">
-            <% Car::BRANDS_MODELS.sort.each do |brand, model| %>
-              <option value="" label=<%= brand %> class="text-bold" disabled="disabled"></option>
-              <% model.each do |v| %>
-                <option value= <%= brand %>><%= v %></option>
-              <% end %>
-            <% end %>
-          </select>
-        </div>
-        <%= f.input :year_of_production, label: 'Année', placeholder: 'Année...' %>
+        <p class="titre-formulaire">INSCRIVEZ VOTRE VOITURE</p>
 
-        <%#= f.input :address, label: 'address', placeholder: 'Adresse...' %>
+        <div class="deux-columns">
+          <div class="form-group select required car_brand">
+            <select class="form-control select required" data-controller="select2" placeholder="Marque de la voiture" name="car[brand]" id="car_brand">
+                <% Car::BRANDS_MODELS.sort.each do |brand, model| %>
+                  <option value= <%= brand %>><%= brand %></option>
+                <% end %>
+              </select>
+            </div>
+
+          <div class="model-car">
+            <div class="form-group select required car_model">
+              <select class="form-control select required decorated" placeholder="Modèle de la voiture" name="car[model]" id="car_model">
+                <% Car::BRANDS_MODELS.sort.each do |brand, model| %>
+                  <option value="" label=<%= brand %> class="text-bold" disabled="disabled"></option>
+                  <% model.each do |v| %>
+                    <option value= <%= brand %>><%= v %></option>
+                  <% end %>
+                <% end %>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="deux-columns">
+          <div class="form-group select optional car_year_of_production">
+            <select class="form-control select optional" data-controller="select2" placeholder="Année de la voiture" name="car[year_of_production]" id="car_year_of_production">
+              <%= years = (1999..2022).sort.reverse %>
+              <% years.each do |year| %>
+                <option value= <%= year %> > <%= year %> </option>
+              <% end %>
+              <option value="< 1999" > < 1999 </option>
+            </select>
+          </div>
+
+          <div class="form-group float optional car_price_per_day">
+            <input class="form-control numeric float optional" placeholder="Votre prix par jour" type="number" step="any" name="car[price_per_day]" id="car_price_per_day">
+          </div>
+        </div>
+
         <div class="form-group text required car_address-form">
           <input class="form-control text required" placeholder="Indiquez votre adresse" name="car[address]" id="car_address">
         </div>
 
-        <%= f.input :price_per_day, label: 'Votre prix par jour ?', placeholder: '.... €' %>
+
         <%= f.input :photo, as: :file, class:"btn btn-light" %>
-        <%= f.button :submit, 'Modifier !', class: 'btn btn-danger' %>
+
+        <%= f.button :submit, 'Enregistrer les modifications', class:"btn rechercher", id:"btn-carte-new" %>
       <% end %>
     </div>
-    <% if @car.photo.attached? %>
-      <%= cl_image_tag("#{@car.photo.key}", crop: :fill, class: "card-photo") %>
-    <% else %>
-      <%= image_tag "photo_inscription.jpg", crop: :fill, class: "card-photo" %>
-    <% end %>
   </div>
 </div>

@@ -15,3 +15,46 @@
     <%= image_tag "photo_inscription.jpg" %>
   </div>
 </div>
+
+
+
+
+
+
+<div class="container-new">
+  <div class="formulaire-new">
+    <div class="text-form">
+      <h1>Complétez vos revenus en partageant votre voiture</h1>
+      <%= simple_form_for(@car) do |f| %>
+        <%= f.input :brand, label: 'Marque', placeholder: 'Marque de la voiture',
+                      collection: Car::BRANDS_MODELS.keys.sort %>
+        <%#= f.input :model, label: 'Modèle', placeholder: 'Modèle de la voiture' %>
+        <div class="form-group select required car_model">
+          <select class="form-control select required decorated" placeholder="Modèle de la voiture" name="car[model]" id="car_model">
+            <% Car::BRANDS_MODELS.sort.each do |brand, model| %>
+              <option value="" label=<%= brand %> class="text-bold" disabled="disabled"></option>
+              <% model.each do |v| %>
+                <option value= <%= brand %>><%= v %></option>
+              <% end %>
+            <% end %>
+          </select>
+        </div>
+        <%= f.input :year_of_production, label: 'Année', placeholder: 'Année...' %>
+
+        <%#= f.input :address, label: 'address', placeholder: 'Adresse...' %>
+        <div class="form-group text required car_address-form">
+          <input class="form-control text required" placeholder="Indiquez votre adresse" name="car[address]" id="car_address">
+        </div>
+
+        <%= f.input :price_per_day, label: 'Votre prix par jour ?', placeholder: '.... €' %>
+        <%= f.input :photo, as: :file, class:"btn btn-light" %>
+        <%= f.button :submit, 'Modifier !', class: 'btn btn-danger' %>
+      <% end %>
+    </div>
+    <% if @car.photo.attached? %>
+      <%= cl_image_tag("#{@car.photo.key}", crop: :fill, class: "card-photo") %>
+    <% else %>
+      <%= image_tag "photo_inscription.jpg", crop: :fill, class: "card-photo" %>
+    <% end %>
+  </div>
+</div>

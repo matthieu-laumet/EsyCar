@@ -1,7 +1,11 @@
-
-
 .container-show {
   min-height: 82vh;
+}
+
+.date-picker {
+  label {
+    display: none;
+  }
 }
 
 .container-cars-show {
@@ -26,18 +30,19 @@
     border-radius: 6px;
 
     .card-photo-show {
-      height: 78%;
+      height: 76%;
       width: 100%;
       object-fit: cover;
       border-radius: 6px 6px 0 0;
       border-bottom: 1px solid $color-darkgray;
     }
 
-    .card-show-text{
+    .card-show-text {
       padding-left: 30px;
       padding-right: 30px;
       padding-top: 10px;
       padding-bottom: 10px;
+      border-top: 1px solid rgba($color: #000000, $alpha: .7);
 
       // align-content: flex-end;
       height: 100px;
@@ -45,8 +50,11 @@
       position: relative;
 
       .text-car-in-line {
-        display: flex;
-        align-items: baseline;
+        h3 {
+          display: inline;
+        }
+        // display: flex;
+        // align-items: baseline;
       }
 
       .year {
@@ -61,7 +69,7 @@
         font-size: 26px;
       }
 
-      .card-title-show{
+      .card-title-show {
         font-family: 'Lato', sans-serif;
         font-weight: 900;
         font-size: 30px;
@@ -76,10 +84,11 @@
   padding-bottom: 20px;
   padding-left: 30px;
   padding-right: 30px;
-  background-color: #c6c6c6;
+  background-color: rgba($color: white, $alpha: .5);
+  box-shadow: inset 0px -80px 1px white;
   border-radius: 4px;
   position: absolute;
-  bottom: 20px;
+  bottom: 27px;
   right: 40px;
   border: 1px solid $color-darkgray;
   text-align: center;
@@ -184,6 +193,24 @@
   }
 
   .left-show {
+    .main-card-show {
+      .card-show-text {
+        padding-left: 18px;
+        padding-right: 150px;
+        .card-title-show {
+          font-size: 26px;
+        }
+        .car-model-show {
+          font-size: 24px;
+        }
+        .year {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+
+  .left-show {
     width: 100%;
   }
   .right-show {
@@ -197,7 +224,6 @@
     padding-bottom: 12px;
     padding-left: 20px;
     padding-right: 20px;
-    background-color: #c6c6c6;
     border-radius: 4px;
     position: absolute;
     bottom: 20px;
@@ -224,6 +250,7 @@
     flex-direction: column;
     #map {
       border: none;
+      border-top: 1px solid rgba($color: #000000, $alpha: .7);
     }
     .address-text {
       .place-de-parking {

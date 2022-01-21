@@ -1,19 +1,17 @@
-<div class="banner-car">
-  <div class="container-banner-car">
-    <%= form_tag cars_path, method: :get, class:"search" do %>
-      <div class="search-address">
+<%# <div class="banner-car"> %>
+  <%# <div class="container-banner-car"> %>
+    <%#= form_tag cars_path, method: :get, class:"search" do %>
+      <%# <div class="search-address">
         <label for="address" class="search-label">Lieu de départ</label>
         <div class="search-inline">
-          <i class="fas fa-search white-color"></i>
-          <%= text_field_tag :address, params[:address], class: "form-control-home", placeholder: "Entrez une ville..." %>
-        </div>
-      </div>
-      <%= submit_tag "Rechercher", class: "btn rechercher" %>
-    <% end %>
-  </div>
-</div>
-
-
+          <i class="fas fa-search white-color"></i> %>
+          <%#= text_field_tag :address, params[:address], class: "form-control-home", placeholder: "Entrez une ville..." %>
+        <%# </div>
+      </div> %>
+      <%#= submit_tag "Rechercher", class: "btn rechercher" %>
+    <%# end %>
+  <%# </div> %>
+<%# </div> %>
 
 <div class="container-cars-show">
   <div class="left-show">
@@ -25,8 +23,13 @@
       <% end %>
       <div class="card-show-text">
         <div class="text-car-in-line">
-          <h3 class="card-title-show m-0"><%= @car.brand %></h3>
-          <h3 class="car-model-show ml-2 mb-0"><%= @car.model.tr('[' ']' '"','') %></h3>
+          <% if @car.brand == "Volkswagen"  %>
+            <h3 class="card-title-show m-0"><%= @car.brand %>&thinsp;<br></h3>
+            <h3 class="car-model-show mb-0"><%= @car.model %></h3>
+          <% else %>
+            <h3 class="card-title-show m-0"><%= @car.brand %>&thinsp;</h3>
+            <h3 class="car-model-show mb-0"><%= @car.model %></h3>
+          <% end %>
         </div>
         <h4 class="year"><%= @car.year_of_production %></h4>
         <div class="price-show">
@@ -40,7 +43,7 @@
         <h5>Adresse de départ et de retour</h5>
         <div class="address-inline mb-3"><i class="fas fa-map-marker-alt mr-2"></i><p><%= @car.address %></p></div>
         <h5>Contactez le propriétaire du véhicule : </h5>
-        <div class="address-inline"><i class="fas fa-user mr-3"></i><p><%= @car.user.first_name %>&thinsp;<%= @car.user.last_name %></p></div>
+        <div class="address-inline"><i class="fas fa-user mr-2"></i><p><%= @car.user.first_name %>&thinsp;<%= @car.user.last_name %></p></div>
         <div class="address-inline mb-3"><i class="fas fa-at mr-2"></i><p><%= @car.user.email %></p></div>
         <div class="place-de-parking">
           <p>Cette voiture a une place de parking réservée. Pas besoin de chercher une place au retour !</p>
@@ -52,7 +55,7 @@
       </div>
     </div>
   </div>
-  <div class="right-show">
+  <div class="right-show date-picker">
       <h3 id="Nouveau-truc">Quand souhaitez-vous réserver ce véhicule ?</h3>
       <%= simple_form_for([ @car, @booking] ) do |f| %>
         <%= f.input :starts_at, as: :string, type: :text, label:'', placeholder:'Choisissez vos dates' %>
