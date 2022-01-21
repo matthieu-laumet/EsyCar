@@ -4,50 +4,51 @@
       <p class="text-left message-no-card">Oupss... Vous n'avez pas encore de locations...</p>
       <p class="text-left ajout-location"><strong>Souhaitez-vous en créer une ?</strong></p>
       <%= link_to "Ajouter une location", new_car_path, class:"btn rechercher", id:"btn-carte-new-location" %>
-    <% end %>
-  <div class="cards">
-    <% @cars.each do |car| %>
-      <%= button_to(car_path(car), method: :get, class: "btn-stripped" ) do %>
-        <div class="card">
-          <div class="card-photo">
-              <% if car.photo.attached? %>
-                <%= cl_image_tag("#{car.photo.key}", crop: :fill, class: "card-photo") %>
-              <% else %>
-                <%= image_tag 'card-en-construction-01.png', crop: :fill, class: "card-photo" %>
-              <% end %>
-              <%#= image_tag 'card-en-construction-01.png', crop: :fill, class: "card-photo" %>
-          </div>
-          <div class="card-body">
-            <div class="text">
-              <div class="card-body-title">
-                <h3 class="card-title m-0"><%= car.brand %></h3>
-                <h3 class="car-model ml-2 mb-0"><%= car.model %></h3>
+    <% else %>
+      <div class="cards">
+        <% @cars.each do |car| %>
+          <%= button_to(car_path(car), method: :get, class: "btn-stripped" ) do %>
+            <div class="card">
+              <div class="card-photo">
+                  <% if car.photo.attached? %>
+                    <%= cl_image_tag("#{car.photo.key}", crop: :fill, class: "card-photo") %>
+                  <% else %>
+                    <%= image_tag 'card-en-construction-01.png', crop: :fill, class: "card-photo" %>
+                  <% end %>
+                  <%#= image_tag 'card-en-construction-01.png', crop: :fill, class: "card-photo" %>
               </div>
-              <div class="card-body-description">
-                <p></p>
+              <div class="card-body">
+                <div class="text">
+                  <div class="card-body-title">
+                    <h3 class="card-title m-0"><%= car.brand %></h3>
+                    <h3 class="car-model ml-2 mb-0"><%= car.model %></h3>
+                  </div>
+                  <div class="card-body-description">
+                    <p></p>
+                  </div>
+                </div>
+                <div class="price">
+                  <p class="value-price"><%= car.price_per_day.to_i %> €</p>
+                  <p>Par jour</p>
+                </div>
+              </div>
+              <div class="card-links">
+                <% if policy(car).edit? %>
+                  <%#= link_to 'Edit', edit_car_path(car) %>
+                  <%= link_to edit_car_path(car) do %>
+                    <i class="fas fa-user-edit"></i>
+                  <% end %>
+                <% end %>
+                <% if policy(car).destroy? %>
+                  <%= link_to(car_path(car), method: :delete,  data: { confirm: "Souhaitez-vous supprimer cette voiture ?" } ) do %>
+                    <i class="fas fa-trash-alt ml-1"></i>
+                  <% end %>
+                <% end %>
               </div>
             </div>
-            <div class="price">
-              <p class="value-price"><%= car.price_per_day.to_i %> €</p>
-              <p>Par jour</p>
-            </div>
-          </div>
-          <div class="card-links">
-            <% if policy(car).edit? %>
-              <%#= link_to 'Edit', edit_car_path(car) %>
-              <%= link_to edit_car_path(car) do %>
-                <i class="fas fa-user-edit"></i>
-              <% end %>
-            <% end %>
-            <% if policy(car).destroy? %>
-              <%= link_to(car_path(car), method: :delete,  data: { confirm: "Souhaitez-vous supprimer cette voiture ?" } ) do %>
-                <i class="fas fa-trash-alt ml-1"></i>
-              <% end %>
-            <% end %>
-          </div>
-        </div>
-      <% end %>
+          <% end %>
+        <% end %>
+      <%= link_to "Ajouter une nouvelle location", new_car_path, class:"btn rechercher mb-4", id:"btn-carte-new-location" %>
+      </div>
     <% end %>
-  </div>
-  <%= link_to "Ajouter une location", new_car_path, class:"btn rechercher mb-4", id:"btn-carte-new-location" %>
 </div>

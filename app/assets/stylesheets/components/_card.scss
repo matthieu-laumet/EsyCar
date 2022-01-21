@@ -1,4 +1,8 @@
 $color-darkgray: rgb(30, 30, 30);
+$color-default: #f79e1e;
+$color-orange: #f79e1e;
+$color-orange-dark:#f7981d;
+$color-orange-very-dark:#db8718;
 
 .btn-stripped {
   background-color: transparent;
@@ -26,6 +30,7 @@ $color-darkgray: rgb(30, 30, 30);
 
       .fas {
         color: $color-darkgray;
+        text-shadow: white 1px 1px 2px;
         &:hover {
           color: $color-orange;
         }
@@ -90,7 +95,8 @@ $color-darkgray: rgb(30, 30, 30);
       padding-bottom: 10px;
       padding-left: 20px;
       padding-right: 20px;
-      background-color: #c6c6c6;
+      background-color: rgba($color: white, $alpha: .5);
+      box-shadow: inset 0px -63px 1px white;
       border-radius: 4px;
       position: absolute;
       bottom: 20px;
@@ -156,11 +162,10 @@ $color-darkgray: rgb(30, 30, 30);
         padding-bottom: 15px;
         padding-left: 20px;
         padding-right: 20px;
-        background-color: #c6c6c6;
         border-radius: 4px;
         position: absolute;
         bottom: 15px;
-        right: 15px;
+        right: 20px;
         border: 1px solid #1e1e1e;
 
         .value-price {

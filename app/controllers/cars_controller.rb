@@ -68,7 +68,7 @@ class CarsController < ApplicationController
   def destroy
     @car.destroy
     if current_user.admin
-      redirect_to cars_path, notice: 'Votre voiture a bien été suprimée'
+      redirect_to my_location_cars_path, notice: 'Votre voiture a bien été suprimée'
     else
       redirect_to my_location_cars_path, notice: 'Votre voiture a bien été suprimée'
     end

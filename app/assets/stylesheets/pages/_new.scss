@@ -5,21 +5,24 @@ $color-orange-very-dark:#db8718;
 
 .container-new {
   min-height: 86vh;
+  top: 30px;
+  position: relative;
+}
+
+.container-edit {
+  min-height: 89vh;
+  top: 30px;
+  position: relative;
 }
 
 .infos-new-car {
-  // position: absolute;
-  // top: 500px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 18px;
   z-index: 10;
   background-color: white;
-  display: flex;
   align-items: center;
-  justify-content: space-around;
-  padding-left: 12%;
-  padding-right: 12%;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  margin-bottom: 30px;
+  justify-content: space-between;
   box-shadow: rgba($color: #000000, $alpha: .2) 0px 0px 10px;
 
   .info-text {
@@ -89,12 +92,37 @@ $color-orange-very-dark:#db8718;
 }
 
 @media(max-width: 500px) {
+  .container-new {
+    margin-bottom: 45px;
+  }
+
+  .container-edit {
+    margin-bottom: 0;
+  }
+
+  .infos-new-car {
+    padding: 26px;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 25px;
+  }
+
   .formulaire-new {
-    flex-direction: column-reverse;
-    padding-left: 5%;
-    padding-right: 5%;
-    margin-bottom: 30px;
-    height: 78vh;
+    flex-direction: column;
+    padding-left: 8%;
+    padding-right: 8%;
+    margin-bottom: 18px;
+    height: 85vh;
+
+    .photo-form {
+      width: 120%;
+      img {
+        width: 100%;
+        -webkit-clip-path: none;
+        height: 315px;
+        margin-bottom: 20px;
+        object-fit: cover;
+      }
+    }
 
     .deux-columns {
       display: flex;
@@ -102,23 +130,16 @@ $color-orange-very-dark:#db8718;
     }
 
     #car_brand {
-      width: 170px;
+      width: 165px;
     }
     #car_model {
-      width: 170px;
+      width: 165px;
     }
     #car_year_of_production {
-      width: 170px;
+      width: 165px;
     }
     #car_price_per_day {
-      width: 170px;
-    }
-
-    img {
-      width: 112%;
-      -webkit-clip-path: none;
-      margin-bottom: 20px;
-      height: 400px;
+      width: 165px;
     }
 
     .text-form {

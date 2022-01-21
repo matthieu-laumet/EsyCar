@@ -4,7 +4,43 @@ $color-orange-dark:#f7981d;
 
 
 .new_car {
-  width: 85%;
+  // width: 85%;
+  margin: 0 auto;
+  .ap-input-icon{
+    left: 17px;
+  }
+
+  .form-control {
+    background-color: white;
+    height: 42px;
+    border: rgba($color-brown, $alpha: 0.5) 1px solid;
+    border-radius: 6px;
+
+
+    &::placeholder {
+    color: rgb(180, 180, 180);
+    }
+
+    &:hover {
+      background-color: rgba($color-orange, $alpha: 0.15);
+      box-shadow: rgba($color: #000000, $alpha: .15) 0px 0px 6px;
+    }
+
+    &:focus {
+      border-bottom: 4px solid $color-default;
+      outline: none !important;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+
+      &::placeholder {
+        color: $color-default;
+      }
+    }
+  }
+}
+
+.edit_car {
+  margin: 0 auto;
   .ap-input-icon{
     left: 17px;
   }
@@ -68,6 +104,7 @@ $color-orange-dark:#f7981d;
   .new_car {
     width: 100%;
   }
+
   .form-control {
     &:hover {
       background-color: white;

@@ -1,5 +1,12 @@
 <div class="container-new">
   <div class="formulaire-new">
+    <div class="photo-form">
+      <% if @car.photo.attached? %>
+        <%= cl_image_tag("#{@car.photo.key}", crop: :fill, class: "card-photo") %>
+      <% else %>
+        <%= image_tag "photo_inscription.jpg", crop: :fill, class: "card-photo" %>
+      <% end %>
+    </div>
     <div class="text-form">
       <h1>Complétez vos revenus en partageant votre voiture</h1>
       <%= simple_form_for(@car) do |f| %>
@@ -71,11 +78,6 @@
         <%= f.button :submit, 'Commencer', class:"btn rechercher", id:"btn-carte-new" %>
       <% end %>
     </div>
-    <% if @car.photo.attached? %>
-      <%= cl_image_tag("#{@car.photo.key}", crop: :fill, class: "card-photo") %>
-    <% else %>
-      <%= image_tag "photo_inscription.jpg", crop: :fill, class: "card-photo" %>
-    <% end %>
 
   </div>
   <div class="infos-new-car">
