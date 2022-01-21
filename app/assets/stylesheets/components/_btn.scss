@@ -147,11 +147,12 @@ $color-brown:#3b270b;
 }
 
 #btn-carte-new-location {
-  width: 220px;
+  width: 420px;
+  padding-top: 10px;
   font-size: 16px;
   background-color: $color-orange;
   color: white;
-  width: 100%;
+  // width: 100%;
   border-radius: 6px;
   border: 2px solid $color-orange-fonce;
 
@@ -213,7 +214,7 @@ $color-brown:#3b270b;
 
   #btn-carte-new-location {
     height: 50px;
-    padding-top: 10px;
+    width: 100%;
   }
 
 
