@@ -1,6 +1,6 @@
 <div class="container-edit">
-  <div class="formulaire-new">
-    <div class="photo-form">
+  <div class="formulaire-new formulaire-new-edit">
+    <div class="photo-form photo-form-edit">
       <% if @car.photo.attached? %>
         <%= cl_image_tag("#{@car.photo.key}", crop: :fill, class: "card-photo") %>
       <% else %>
