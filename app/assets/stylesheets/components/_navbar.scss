@@ -2,13 +2,24 @@ $color-gray: #6e6e6e;
 $color-darkgray: rgb(30, 30, 30);
 $color-orange-dark:#f7981d;
 
-.navbar-lewagon {
-  justify-content: space-between;
-  background-color: white;
-}
+// .navbar-lewagon {
+//   background-color: white;
+// }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
+}
+
+.navbar-lewagon {
+  justify-content: space-between;
+  background-image: asset-url("Voiture_banner.png");
+  background-size: cover;
+  background-position-y: 0px;
+}
+
+.navbar-lewagon-white {
+  border-bottom: 1px solid white !important;
+  box-shadow: 0 6px 6px rgba($color: #585858, $alpha: .1) !important;
 }
 
 .navbar {
@@ -16,15 +27,17 @@ $color-orange-dark:#f7981d;
   padding-right: 1.5rem;
   padding-bottom: 8px;
   padding-left: 1.5rem;
+  width: 100vw;
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 6px 6px rgba($color: #585858, $alpha: .1);
-  border-bottom: 1px solid rgb(225, 225, 225);
+  // box-shadow: 0 6px 6px rgba($color: #585858, $alpha: .1);
+  // border-bottom: 1px solid rgb(225, 225, 225);
 
   .avatar-display {
     display: flex;
     align-items: center;
+    color: white;
 
     p  {
       margin-right: 10px;
@@ -66,13 +79,13 @@ $color-orange-dark:#f7981d;
 
   .menu-link {
     text-decoration: none;
-    color: $color-gray;
+    color: white;
     // margin-right: 15px;
     margin-left: 15px;
     width: 170px;
 
     &:hover {
-      color: $color-darkgray;
+      color: $color-orange-dark;
       font-weight: 700;
     }
   }
@@ -114,20 +127,20 @@ $color-orange-dark:#f7981d;
   }
 }
 
+@media(max-width: 1000px) {
+  .navbar-brand {
+    img {}
+  }
+}
+
 @media(max-width: 500px) {
   .menu-link {
     display: none;
   }
 
   .navbar-lewagon {
-    background-image: asset-url("banner-car-mobile2.png");
-    background-size: cover;
     background-position-y: -173px;
-  }
-
-  .navbar-lewagon-white {
-    border-bottom: 1px solid white !important;
-    box-shadow: 0 6px 6px rgba($color: #585858, $alpha: .1) !important;
+    background-image: asset-url("banner-car-mobile2.png");
   }
 
   .navbar {

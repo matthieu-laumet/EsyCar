@@ -96,7 +96,7 @@ $color-orange-very-dark:#db8718;
       padding-left: 20px;
       padding-right: 20px;
       background-color: rgba($color: white, $alpha: .5);
-      box-shadow: inset 0px -63px 1px white;
+      box-shadow: inset 0px -27px 1px white;
       border-radius: 4px;
       position: absolute;
       bottom: 20px;
@@ -104,14 +104,14 @@ $color-orange-very-dark:#db8718;
       border: 1px solid $color-darkgray;
 
       .value-price {
-        font-size: 36px;
+        font-size: 30px;
         color: black;
         font-weight: 900;
       }
 
       p {
         margin-bottom: 0;
-        font-size: 18px;
+        font-size: 14px;
         color: black;
         font-weight: 900;
       }
@@ -163,6 +163,7 @@ $color-orange-very-dark:#db8718;
         padding-left: 20px;
         padding-right: 20px;
         border-radius: 4px;
+        box-shadow: inset 0px -63px 1px white;
         position: absolute;
         bottom: 15px;
         right: 20px;
