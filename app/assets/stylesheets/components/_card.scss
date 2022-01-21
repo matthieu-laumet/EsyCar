@@ -42,20 +42,20 @@ $color-orange-very-dark:#db8718;
     display: flex;
     align-items: baseline;
     font-family: 'Lato', sans-serif;
-    color: black;
+    // color: black;
   }
 
   .car-model {
     opacity: .7;
     font-weight: 700;
     font-size: 16px;
-    color: blue;
+    color: $color-darkgray;
   }
 
   .card-title {
     font-weight: 900;
     font-size: 18px;
-    color: red;
+    color: rgba($color: $color-darkgray, $alpha: .7);
   }
 
   .card-photo {
