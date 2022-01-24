@@ -2,15 +2,40 @@
   min-height: 86.5vh;
   padding-top: 6vh;
 }
+
+#main-container-forgot-password {
+  padding-top: 3vh;
+}
+
+#main-container-inscription {
+  padding-top: 1vh;
+}
+
+#session-inscription {
+  flex-direction: row-reverse;
+  max-height: 80vh;
+}
+
+#img-inscription-container {
+  width: 65%;
+}
+
+#img-inscription {
+  height: 80vh;
+  border-radius: 0 12px 12px 0;
+}
+
 .container-login {
   width: 65%;
   min-width: 420px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   margin: 20px auto;
   background-color: white;
   box-shadow: 0 0px 6px rgba($color: #585858, $alpha: .1);
   border: 1px solid rgb(225, 225, 225);
+
 
   .log-form {
     min-width: 150px;
@@ -30,12 +55,20 @@
     width: 40%;
   }
 
+  .img-connection-forgot {
+    width: 100%;
+    // height: 65vh;
+  }
+
+  #img-forgot-password {
+    height: 70vh;
+  }
+
   .img-backgound {
     background-image: asset-url("photo.png");
-    background-size: fill;
+    background-size: cover;
     width: 100%;
-    // max-width: 400px;
-    // min-width: 200px;
+    border-radius: 12px 0 0 12px;
   }
 
   #img-signup {
@@ -44,18 +77,43 @@
   }
 
   #forgot-password {
-    width: 100%;
+    width: 50%;
+    margin-left: 11%;
+    margin-right: 11%;
   }
 }
 
 #container-forgot-password {
-  width: 40%;
-  height: 400px;
+  // width: 40%;
+  height: 70vh;
 }
 
 @media(max-width: 500px) {
   .img-connection {
     display: none;
+  }
+
+
+  #session-inscription {
+    border-radius: 0;
+  }
+
+  #main-container-inscription {
+    padding-top: 0;
+  }
+
+  #container-forgot-password {
+    #forgot-password {
+      width: 100%;
+    }
+  }
+
+  #main-container-forgot-password {
+    padding-top: 0;
+  }
+
+  #container-forgot-password {
+    border-radius: 0;
   }
 
   .main-container-login {
@@ -74,5 +132,9 @@
       margin-left: 10%;
       margin-right: 10%;
     }
+  }
+
+  .img-connection-forgot {
+    display: none;
   }
 }

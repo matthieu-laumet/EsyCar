@@ -1,22 +1,28 @@
-<div class="container-login" id="container-forgot-password">
-  <div class="log-form" id="forgot-password">
-    <h2>Mot de passe oublié ?</h2>
+<div class="main-container-login" id="main-container-forgot-password">
+  <div class="container-login" id="container-forgot-password">
+    <div class="img-connection-forgot">
+      <%= image_tag "img-forgot.png", class:"img-backgound", id:"img-forgot-password" %>
+    </div>
+    <div class="log-form" id="forgot-password">
+      <h2>Mot de passe oublié ?</h2>
+      <p>Entrez votre email ci-dessous afin de recevoir les instructions pour réinitialiser votre mot de passe.</p>
 
-    <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-      <%= f.error_notification %>
+      <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+        <%= f.error_notification %>
 
-      <div class="form-inputs">
-        <%= f.input :email,
-                    required: true,
-                    autofocus: true,
-                    input_html: { autocomplete: "email" } %>
-      </div>
+        <div class="form-inputs">
+          <%= f.input :email,
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "email" } %>
+        </div>
 
-      <div class="form-actions">
-        <%= f.button :submit, "Envoie de mon nouveau mot de passe", class:'btn btn-danger mb-2'  %>
-      </div>
-    <% end %>
+        <div class="form-actions">
+          <%= f.button :submit, "Envoie de mon nouveau mot de passe", class:'btn btn-danger mb-2'  %>
+        </div>
+      <% end %>
 
-    <%= render "devise/shared/links" %>
+      <%= render "devise/shared/links" %>
+    </div>
   </div>
 </div>
