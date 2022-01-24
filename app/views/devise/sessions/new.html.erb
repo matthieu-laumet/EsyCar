@@ -1,24 +1,29 @@
-<div class="container-login">
-  <div class="img-backgound">
-  </div>
-  <div class="log-form">
-    <h2>Me connecter</h2>
-    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <div class="form-inputs">
-        <%= f.input :email,
-                    required: false,
-                    autofocus: true,
-                    input_html: { autocomplete: "email" } %>
-        <%= f.input :password,
-                    required: false,
-                    input_html: { autocomplete: "current-password" } %>
-        <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-      </div>
+<div class="main-container-login">
+  <div class="container-login">
+    <div class="img-connection">
+      <%= image_tag "photo.png", class:"img-backgound" %>
+    </div>
+    <div class="log-form">
+      <h2>Me connecter</h2>
+      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="form-inputs">
+          <%= f.input :email,
+                      required: false,
+                      autofocus: true,
+                      input_html: { autocomplete: "email" } %>
+          <%= f.input :password,
+                      required: false,
+                      label: "Mot de passe",
+                      class: "mt-2",
+                      input_html: { autocomplete: "current-password" } %>
+          <%= f.input :remember_me, label: "Se souvenir de moi", as: :boolean if devise_mapping.rememberable? %>
+        </div>
 
-      <div class="form-actions">
-        <%= f.button :submit, "Me connecter", class: 'btn btn-danger mb-2'%>
-      </div>
-    <% end %>
-    <%= render "devise/shared/links" , class:"color-gray"%>
+        <div class="form-actions">
+          <%= f.button :submit, "Me connecter", class: 'btn btn-danger mb-2'%>
+        </div>
+      <% end %>
+      <%= render "devise/shared/links" , class:"color-gray"%>
+    </div>
   </div>
 </div>
