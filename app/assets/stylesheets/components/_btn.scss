@@ -45,10 +45,10 @@ $color-brown:#3b270b;
 }
 
 .navbar-toggler {
-    border: rgba($color-brown, $alpha: 0.5) 1px solid;
-    border-radius: 6px;
-    background-color: white;
-  }
+  border: rgba($color-brown, $alpha: 0.5) 1px solid;
+  border-radius: 6px;
+  background-color: white;
+}
 
 #btn-banner {
   background-color: rgba($color: $color-orange, $alpha: .5);
@@ -188,6 +188,11 @@ $color-brown:#3b270b;
 }
 
 
+@media(max-width: 1100px) {
+  #btn-carte-new-location {
+    width: 265px;
+  }
+}
 @media(max-width: 500px) {
   #btn-banner {
     height: 70px;

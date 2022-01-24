@@ -15,7 +15,7 @@ $color-orange-very-dark:#db8718;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 28px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 
   .card {
     box-shadow: 0 0 8px rgba($color: #7f7f7f, $alpha: .15);
@@ -128,7 +128,7 @@ $color-orange-very-dark:#db8718;
   .cards {
     grid-template-columns: 1fr 1fr 1fr;
     // height: 500px;
-    min-height: 44vh;
+    // min-height: 44vh;
     grid-gap: 20px;
   }
 }
