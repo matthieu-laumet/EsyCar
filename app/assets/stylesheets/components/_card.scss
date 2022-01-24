@@ -46,16 +46,16 @@ $color-orange-very-dark:#db8718;
   }
 
   .car-model {
-    opacity: .7;
+    opacity: .85;
     font-weight: 700;
     font-size: 16px;
     color: $color-darkgray;
   }
 
   .card-title {
+    color: $color-darkgray;
     font-weight: 900;
     font-size: 18px;
-    color: rgba($color: $color-darkgray, $alpha: .7);
   }
 
   .card-photo {
