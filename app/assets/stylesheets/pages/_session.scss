@@ -1,9 +1,12 @@
+.main-container-login {
+  min-height: 86.5vh;
+  padding-top: 6vh;
+}
 .container-login {
   width: 65%;
   min-width: 420px;
   display: flex;
   align-items: center;
-  min-height: 79vh;
   margin: 20px auto;
   background-color: white;
   box-shadow: 0 0px 6px rgba($color: #585858, $alpha: .1);
@@ -12,8 +15,8 @@
   .log-form {
     min-width: 150px;
     width: 45%;
-    margin-left: 30px;
-    margin-right: 30px;
+    margin-left: 7%;
+    margin-right: 8%;
     h2 {
       margin-bottom: 20px;
     }
@@ -23,13 +26,16 @@
     }
   }
 
+  .img-connection {
+    width: 40%;
+  }
+
   .img-backgound {
     background-image: asset-url("photo.png");
-    background-size: cover;
-    width: 50%;
-    max-width: 400px;
-    min-width: 200px;
-    height: 100%;
+    background-size: fill;
+    width: 100%;
+    // max-width: 400px;
+    // min-width: 200px;
   }
 
   #img-signup {
@@ -48,14 +54,20 @@
 }
 
 @media(max-width: 500px) {
-    .img-backgound {
+  .img-connection {
     display: none;
   }
 
+  .main-container-login {
+    padding-top: 0;
+    min-height: 79vh;
+  }
+
   .container-login {
-    width: 90%;
+    width: 100%;
     margin: 0px auto;
     min-height: 79vh;
+    min-width: 30px;
 
     .log-form {
       width: 90%;
