@@ -1,43 +1,57 @@
-<div class="container-login">
-  <div class="log-form">
-    <h2>Modifier mon profil <%#= resource_name.to_s.humanize %></h2>
+<div class="main-container-login" id="main-container-edit">
+  <div class="container-login" id="session-edit">
+    <div class="img-connection-edit" id="img-edit-container">
+      <h2 class="mb-4">Modifier mon profil <%#= resource_name.to_s.humanize %></h2>
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <% if current_user.photo.attached? %>
+        <%= cl_image_tag("#{current_user.photo.key}", class: "avatar-big") %>
+      <% else %>
+        <%= image_tag "avatar.svg", class: "avatar-big" %>
+      <% end %>
+      <%= f.input :photo, as: :file, class:"btn btn-light" %>
+    </div>
+    <div class="log-form" id="log-form-edit">
+        <%# <h2 class="edit-profil-title">Modifier mon profil</h2> %>
 
-    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-      <%= f.error_notification %>
+        <%= f.error_notification %>
 
-      <div class="form-inputs">
-        <%= f.input :email, required: true, autofocus: true %>
+        <%= f.input :first_name, label: "Prénom" %>
+        <%= f.input :last_name, label: "Nom" %>
+        <div class="form-inputs">
+          <%= f.input :email, required: true, autofocus: true %>
 
-        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-          <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
-        <% end %>
+          <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+            <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+          <% end %>
 
-        <%= f.input :password,
-                    hint: "Ne rien mettre si vous ne souhaitez pas changer votre mot de passe",
-                    required: false,
-                    label: "Nouveau mot de passe",
-                    input_html: { autocomplete: "new-password" } %>
-        <%= f.input :password_confirmation,
-                    required: false,
-                    label: "Saisissez à nouveau votre mot de passe",
-                    input_html: { autocomplete: "new-password" } %>
-        <%= f.input :current_password,
-                    hint: "Nous avons besoin de votre mot de passe actuel pour faire les changements",
-                    required: true,
-                    label: "Ancien mot de passe",
-                    input_html: { autocomplete: "current-password" } %>
+          <%#= f.input :password,
+                      hint: "Ne rien mettre si vous ne souhaitez pas changer votre mot de passe",
+                      required: false,
+                      label: "Nouveau mot de passe",
+                      input_html: { autocomplete: "new-password" } %>
 
-        <%= f.input :photo, as: :file, class:"btn btn-light" %>
-      </div>
+          <%#= f.input :password_confirmation,
+                      required: false,
+                      label: "Saisissez à nouveau votre mot de passe",
+                      input_html: { autocomplete: "new-password" } %>
 
-      <div class="form-actions">
-        <%= f.button :submit, "Mettre à jour mon profil", class:'btn btn-danger mb-2 mt-2' %>
-      </div>
-    <% end %>
+          <%= f.input :current_password,
+                      hint: "Nous avons besoin de votre mot de passe actuel pour faire les changements",
+                      required: true,
+                      label: "Mot de passe",
+                      input_html: { autocomplete: "current-password" } %>
 
-    <%# <h3>Supprimer mon compte</h3> %>
-    <p>Unhappy? <%= link_to "Supprimer mon compte", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+        </div>
 
-    <%= link_to "Acceuil", :back %>
+        <div class="form-actions">
+          <%= f.button :submit, "Mettre à jour mon profil", class:'btn rechercher mb-2 mt-2 mr-2', id:"btn-carte-new" %>
+          <%= link_to "Supprimer mon compte", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %>
+        </div>
+  <% end %>
+
+      <%# <h3>Supprimer mon compte</h3> %>
+
+      <%#= link_to "Acceuil", :back %>
+    </div>
   </div>
 </div>
