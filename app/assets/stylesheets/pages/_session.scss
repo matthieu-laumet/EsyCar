@@ -20,6 +20,17 @@
   width: 65%;
 }
 
+#session-edit {
+  padding-top: 3%;
+  padding-bottom: 3%;
+}
+
+#img-edit-container {
+  width: 40%;
+  margin-left: 9%;
+  border-right: $color-gray solid 1px;
+}
+
 #img-inscription {
   height: 80vh;
   border-radius: 0 12px 12px 0;
@@ -77,7 +88,7 @@
   }
 
   #forgot-password {
-    width: 50%;
+    width: 80%;
     margin-left: 11%;
     margin-right: 11%;
   }
@@ -88,31 +99,49 @@
   height: 70vh;
 }
 
+.edit-profil-title {
+  display: none;
+}
+
 @media(max-width: 500px) {
   .img-connection {
     display: none;
   }
 
-
-  #session-inscription {
-    border-radius: 0;
+  #img-edit-container {
+    border: none;
+    margin-bottom: 20px;
+    margin-top: 25px;
+    margin-left: 0;
+    width: 68%;
+    // border-bottom: $color-gray solid 1px;
   }
 
-  #main-container-inscription {
-    padding-top: 0;
+  #log-form-edit {
+    margin-bottom: 20px;
+  }
+
+  #session-edit {
+    flex-direction: column;
+  }
+
+  .edit-profil-title {
+    display: block;
   }
 
   #container-forgot-password {
     #forgot-password {
       width: 100%;
+      margin-right: 8%;
+      margin-left: 8%;
     }
   }
 
-  #main-container-forgot-password {
+  #main-container-forgot-password, #session-edit, #main-container-inscription {
     padding-top: 0;
   }
 
-  #container-forgot-password {
+  #container-forgot-password, #session-inscription, #session-edit {
     border-radius: 0;
   }
 
