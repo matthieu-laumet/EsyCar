@@ -133,9 +133,17 @@ $color-orange-dark:#f7981d;
   }
 }
 
-@media(max-width: 1000px) {
+@media(max-width: 1100px) {
+  .menu-link {
+    width: 160px;
+  }
+
   .navbar-brand {
-    img {}
+    margin-right: 0;
+  }
+
+  #louer {
+    margin-left: 0;
   }
 }
 

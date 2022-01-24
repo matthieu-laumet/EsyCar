@@ -84,9 +84,71 @@ $color-brown:#3b270b;
   }
 }
 
-@media(max-width: 1000px) {
+@media(max-width: 1600px) {
+  .banner-home {
+    .container-banner-home {
+      padding-top: 4%;
+      .title {
+        font-size: 40px;
+      }
+
+      h2 {
+        line-height: 40px;
+        font-size: 40px;
+        color: $color-orange;
+      }
+
+      p {
+        font-size: 22px;
+        line-height: 28px;
+      }
+    }
+  }
+}
+
+@media(max-width: 1100px) {
+  .banner-home {
+    height: 75vh;
+    background-image: asset-url("banner-car-mobile-large.png");
+
+    .container-banner-home {
+      padding-top: 2%;
+      width: 53%;
+      padding-left: 8%;
+
+      .title {
+        font-size: 28px;
+      }
+
+      h2 {
+        line-height: 28px;
+        font-size: 28px;
+        color: $color-orange;
+        margin-bottom: 8px;
+      }
+
+      p {
+        font-size: 18px;
+        line-height: 28px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+
   .banner-car {
+    padding-left: 7%;
+    padding-right: 7%;
+    width: 100%;
     .container-banner-car {
+      width: 100%;
+    }
+    .search-address {
+      width: 75%;
+    }
+  }
+
+  #mobile-search-index {
+    #address {
       width: 100%;
     }
   }
@@ -98,30 +160,28 @@ $color-brown:#3b270b;
     background-image: asset-url("banner-car-mobile2.png");
     object-fit: cover;
     background-position-y: -235px;
-    // position: absolute;
-    // top: 63px;
-
-    .title {
-      font-size: 40px;
-    }
-
-    h2 {
-      font-size: 40px;
-      margin-bottom: 15px;
-    }
-
-    p {
-      font-size: 16px;
-      line-height: 26px;
-      margin-bottom: 300px;
-      width: 240px;
-    }
 
     .container-banner-home {
       padding-left: 8%;
       padding-right: 8%;
       padding-top: 8%;
       width: 100%;
+
+      .title {
+        font-size: 40px;
+      }
+
+      h2 {
+        font-size: 40px;
+        margin-bottom: 15px;
+      }
+
+      p {
+        // font-size: 16px;
+        line-height: 26px;
+        margin-bottom: 310px;
+        width: 240px;
+      }
     }
 
     .ap-input-icon {
@@ -141,6 +201,10 @@ $color-brown:#3b270b;
       .search {
         margin-top: 10px;
       }
+    }
+
+    .search-address {
+      width: 100%;
     }
   }
 }
