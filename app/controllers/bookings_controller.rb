@@ -2,7 +2,9 @@ class BookingsController < ApplicationController
   def create
     date = params[:booking][:starts_at].split
     @booking = Booking.new(starts_at: date.first, ends_at: date.last)
+    authorize @booking
     @car = Car.find(params[:car_id])
+    authorize @car
     @booking.car = @car
     @booking.user = current_user
       if @booking.save
