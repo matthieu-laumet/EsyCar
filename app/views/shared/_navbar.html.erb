@@ -9,6 +9,9 @@
       <%= link_to 'Listes des véhicules', cars_path, class:"menu-link" %>
       <% if user_signed_in? %>
         <%= link_to "Voir mes locations",  my_location_cars_path, class: "menu-link" %>
+        <% if policy(Booking).create? %>
+          <%= link_to 'Voir mes réservations', my_booking_cars_path, class:"menu-link" %>
+        <% end %>
       <% end %>
       <% if policy(Car).create? %>
         <%= link_to 'Louer ma voiture', new_car_path, class:"menu-link btn mr-3", id:"louer"%>

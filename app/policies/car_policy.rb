@@ -18,6 +18,11 @@ class CarPolicy < ApplicationPolicy
     Car.all
   end
 
+  def my_booking?
+    Booking.all
+    Car.all
+  end
+
   def show?
     true
   end

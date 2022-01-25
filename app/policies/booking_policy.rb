@@ -8,4 +8,10 @@ class BookingPolicy < ApplicationPolicy
   def create?
     true
   end
+
+  def my_booking?
+    Booking.all
+    Car.all
+  end
+
 end

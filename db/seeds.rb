@@ -1,7 +1,7 @@
 require 'faker'
 
 User.destroy_all
-# Car.destroy_all
+Car.destroy_all
 
   User.create!(email: 'julia@gmail.com', password: 'azerty', first_name: 'Julia', last_name: 'Duwagon', admin: true)
   User.create!(email: 'matt@gmail.com', password: 'azerty', first_name: 'Matthieu', last_name: 'Laumet', admin: false)
