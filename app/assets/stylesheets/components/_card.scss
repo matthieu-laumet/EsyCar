@@ -11,11 +11,21 @@ $color-orange-very-dark:#db8718;
   width: 100%;
 }
 
+.on-construction {
+  font-size: 60px;
+  font-weight: bold;
+}
+
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 28px;
   margin-bottom: 20px;
+
+  .booking-card {
+    padding: 30px;
+    opacity: .3;
+  }
 
   .card {
     box-shadow: 0 0 8px rgba($color: #7f7f7f, $alpha: .15);

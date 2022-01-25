@@ -1,0 +1,22 @@
+<div class="container-cars-location">
+  <h3>Mes réservations</h3>
+    <% if @bookings.empty? %>
+      <p class="text-left message-no-card">Oupss... Vous n'avez pas encore de reservation...</p>
+      <%# <p class="text-left ajout-location"><strong>Souhaitez-vous en créer une ?</strong></p> %>
+      <%= link_to "Rechercher une voiture", cars_path, class:"btn rechercher", id:"btn-carte-new-location" %>
+    <% else %>
+      <div class="cards">
+        <% @bookings.each do |booking| %>
+          <div class="card booking-card">
+            <li>Du <%= booking.starts_at.strftime('%A %d %b') %> au <%= booking.ends_at.strftime('%A %d %b') %></li>
+            <li><%= booking.car.brand %>&thinsp;<%= booking.car.model %></li>
+            <li><%= booking.car.price_per_day.to_i %>€ | jour</li>
+            <li><%= booking.car.address %></li>
+            <li><%= booking.car.user.first_name %>&thinsp;<%= booking.car.user.last_name %></li>
+          </div>
+        <% end %>
+       <h1 class="on-construction">Page en construction...</h1>
+      </div>
+      <%= link_to "Rechercher une voiture", cars_path, class:"btn rechercher", id:"btn-carte-new-location" %>
+    <% end %>
+</div>

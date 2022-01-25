@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :cars do
     collection do
       get :my_location
+      get :my_booking
     end
    resources :bookings, only: [ :new, :create ]
   end

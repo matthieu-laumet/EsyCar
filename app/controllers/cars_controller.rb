@@ -25,6 +25,13 @@ class CarsController < ApplicationController
     authorize @cars
   end
 
+  def my_booking
+    @bookings = Booking.where(user: current_user)
+    # @cars = Car.where(user: current_user)
+    # authorize @cars
+    authorize @bookings
+  end
+
   def show
     @booking = Booking.new
 

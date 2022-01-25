@@ -9,9 +9,9 @@ class BookingsController < ApplicationController
     @booking.user = current_user
       if @booking.save
         flash[:notice] = "Vous avez-bien réservé votre #{@car.brand} #{@car.model} ! Merci pour votre confiance"
-        redirect_to car_path(@car)
+        redirect_to my_booking_cars_path
       else
-        redirect_to car_path(@car), notice: "Please try again"
+        redirect_to car_path(@car), notice: "La réservation n'a pas pu être faite...."
       end
   end
 
